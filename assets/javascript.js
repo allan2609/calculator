@@ -207,43 +207,81 @@ clearButton.addEventListener("click", () => {
 });
 
 addButton.addEventListener("click", () => {
-  firstNumber = display.textContent;
-  operator = "add";
+  if (!firstNumber && display.textContent !== "") {
+    firstNumber = display.textContent;
+    operator = "add";
+  } else if (firstNumber && display.textContent !== "") {
+    secondNumber = display.textContent;
+    operate(operator, firstNumber, secondNumber);
+    firstNumber = operate(operator, firstNumber, secondNumber);
+    secondNumber = "";
+    operator = "add";
+  } else {
+    display.textContent = "Error";
+  }
 });
 
 subtractButton.addEventListener("click", () => {
-  firstNumber = display.textContent;
-  operator = "subtract";
+  if (!firstNumber && display.textContent !== "") {
+    firstNumber = display.textContent;
+    operator = "subtract";
+  } else if (firstNumber && display.textContent !== "") {
+    secondNumber = display.textContent;
+    operate(operator, firstNumber, secondNumber);
+    firstNumber = operate(operator, firstNumber, secondNumber);
+    secondNumber = "";
+    operator = "subtract";
+  } else {
+    display.textContent = "Error";
+  }
 });
 
 multiplyButton.addEventListener("click", () => {
-  firstNumber = display.textContent;
-  operator = "multiply";
+  if (!firstNumber && display.textContent !== "") {
+    firstNumber = display.textContent;
+    operator = "multiply";
+  } else if (firstNumber && display.textContent !== "") {
+    secondNumber = display.textContent;
+    operate(operator, firstNumber, secondNumber);
+    firstNumber = operate(operator, firstNumber, secondNumber);
+    secondNumber = "";
+    operator = "multiply";
+  } else {
+    display.textContent = "Error";
+  }
 });
 
 divideButton.addEventListener("click", () => {
-  firstNumber = display.textContent;
-  operator = "divide";
+  if (!firstNumber && display.textContent !== "") {
+    firstNumber = display.textContent;
+    operator = "divide";
+  } else if (firstNumber && display.textContent !== "") {
+    secondNumber = display.textContent;
+    operate(operator, firstNumber, secondNumber);
+    firstNumber = operate(operator, firstNumber, secondNumber);
+    secondNumber = "";
+    operator = "divide";
+  } else {
+    display.textContent = "Error";
+  }
 });
 
 equalsButton.addEventListener("click", () => {
-  if (!secondNumber && secondNumber !== 0) {
+  if (firstNumber && !secondNumber && secondNumber !== 0) {
     secondNumber = firstNumber;
     operate(operator, firstNumber, secondNumber);
     firstNumber = display.textContent;
-    console.log(firstNumber, secondNumber);
   } else if (secondNumber === 0) {
-    secondNumber = 0;
     operate(operator, firstNumber, secondNumber);
     firstNumber = display.textContent;
-    console.log(firstNumber, secondNumber);
   } else if (firstNumber && secondNumber) {
     operate(operator, firstNumber, secondNumber);
     firstNumber = display.textContent;
-    console.log(firstNumber, secondNumber);
+  } else if (!firstNumber) {
+    firstNumber = 0;
+    display.textContent = 0;
   } else {
     display.textContent = "Error";
-    console.log(firstNumber, secondNumber);
   }
 });
 
