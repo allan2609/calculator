@@ -260,7 +260,13 @@ function multiply(a, b) {
 };
 
 function divide(a, b) {
-  return +a / +b;
+  if (b !== 0) {
+    return +a / +b;
+  } else if (b === 0) {
+    return "Error: divison by 0";
+  } else {
+    return "Error";
+  }
 };
 
 function operate(op, a, b) {
