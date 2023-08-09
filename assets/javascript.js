@@ -227,8 +227,13 @@ divideButton.addEventListener("click", () => {
 });
 
 equalsButton.addEventListener("click", () => {
-  if (!secondNumber) {
+  if (!secondNumber && secondNumber !== 0) {
     secondNumber = firstNumber;
+    operate(operator, firstNumber, secondNumber);
+    firstNumber = display.textContent;
+    console.log(firstNumber, secondNumber);
+  } else if (secondNumber === 0) {
+    secondNumber = 0;
     operate(operator, firstNumber, secondNumber);
     firstNumber = display.textContent;
     console.log(firstNumber, secondNumber);
