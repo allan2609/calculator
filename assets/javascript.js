@@ -307,29 +307,22 @@ divideButton.addEventListener("click", () => {
 });
 
 equalsButton.addEventListener("click", () => {
-  if (firstNumber && !secondNumber) {
+  if (firstNumber && operator && !secondNumber) {
     secondNumber = display.textContent;
     operate(operator, firstNumber, secondNumber);
     operatorClicked = true;
     console.log(`equals case 1, operator is ${operator}, firstnumber is ${firstNumber}, secondnumber is ${secondNumber}`);
-  } else if (display.textContent === "0") {
-    secondNumber = 0;
+  } else if (firstNumber && operator && secondNumber) {
     operate(operator, firstNumber, secondNumber);
     operatorClicked = true;
     console.log(`equals case 2, operator is ${operator}, firstnumber is ${firstNumber}, secondnumber is ${secondNumber}`);
-  } else if (display.textContent === "" || display.textContent === NaN) {
-    secondNumber = display.textContent;
-    display.textContent = "Error";
-    operatorClicked = true;
+  } else if (!firstNumber || !operator) {
+    operatorClicked = false;
     console.log(`equals case 3, operator is ${operator}, firstnumber is ${firstNumber}, secondnumber is ${secondNumber}`);
-  } else if (firstNumber && secondNumber) {
-    operate(operator, firstNumber, secondNumber);
-    operatorClicked = true;
-    console.log(`equals case 4, operator is ${operator}, firstnumber is ${firstNumber}, secondnumber is ${secondNumber}`);
   } else {
     display.textContent = "Error performing operation";
     operatorClicked = true;
-    console.log(`equals case 5, operator is ${operator}, firstnumber is ${firstNumber}, secondnumber is ${secondNumber}`);
+    console.log(`equals case 4, operator is ${operator}, firstnumber is ${firstNumber}, secondnumber is ${secondNumber}`);
   }
 });
 
