@@ -1,8 +1,9 @@
-let firstNumber;
+let firstNumber = 0;
 let secondNumber;
-let operator;
+let operator = "";
+let operatorClicked = false;
 const display = document.querySelector(".display");
-display.textContent = "0";
+display.textContent = firstNumber;
 const numberZero = document.querySelector("#zero");
 const numberOne = document.querySelector("#one");
 const numberTwo = document.querySelector("#two");
@@ -21,332 +22,314 @@ const divideButton = document.querySelector("#divide");
 const equalsButton = document.querySelector("#equals");
 
 numberZero.addEventListener("click", () => {
-  if (!operator && !firstNumber && !secondNumber && display.textContent == "0") {
-    display.textContent = 0;
+  if (display.textContent === "0") {
     console.log("no assigments, display 0");
-  } else if (!operator && !firstNumber && !secondNumber && display.textContent != "0") {
+  } else if (operator === "" && display.textContent !== 0) {
     display.textContent += 0;
-    console.log("no assignments, add 0 to end of number");
-  } else if (operator && firstNumber && !secondNumber && display.textContent == "" && display.textContent == "0") {
+    console.log("no assignments, add 0 to the end of number");
+  } else if (operator !== "" && operatorClicked === true) {
     display.textContent = 0;
-    console.log("firstnumber and op assigned, display 0");
-  } else if (operator && firstNumber && !secondNumber && display.textContent != "" && display.textContent != "0") {
+    operatorClicked = false;
+    console.log(`new operator ${operator}, display 0`);
+  } else if (operator !== "" && operatorClicked === false) {
     display.textContent += 0;
-    console.log("firstnumber and op assigned, add 0 to end of number");
+    console.log("operator already in place, add 0 to the end of number");
   } else {
     display.textContent = "Error";
   }
 });
 
 numberOne.addEventListener("click", () => {
-  if (!operator && !firstNumber && !secondNumber && display.textContent == "0") {
+  if (display.textContent === "0") {
     display.textContent = 1;
     console.log("no assigments, display 1");
-  } else if (!operator && !firstNumber && !secondNumber && display.textContent != "0") {
+  } else if (operator === "" && display.textContent !== 0) {
     display.textContent += 1;
-    console.log("no assignments, add 1 to textcontent");
-  } else if (firstNumber && !secondNumber) {
+    console.log("no assignments, add 1 to the end of number");
+  } else if (operator !== "" && operatorClicked === true) {
     display.textContent = 1;
-    secondNumber = 1;
-    console.log("first number assigned, assign 1 as secondnumber");
-  } else if (firstNumber && secondNumber) {
+    operatorClicked = false;
+    console.log(`new operator ${operator}, display 1`);
+  } else if (operator !== "" && operatorClicked === false) {
     display.textContent += 1;
-    secondNumber = display.textContent;
-    console.log("firstnumber and secondnumber assigned, add 1 to end of secondnumber");
+    console.log("operator already in place, add 1 to the end of number");
   } else {
     display.textContent = "Error";
   }
 });
 
 numberTwo.addEventListener("click", () => {
-  if (!operator && !firstNumber && !secondNumber && display.textContent == "0") {
+  if (display.textContent === "0") {
     display.textContent = 2;
     console.log("no assigments, display 2");
-  } else if (!operator && !firstNumber && !secondNumber && display.textContent != "0") {
+  } else if (operator === "" && display.textContent !== 0) {
     display.textContent += 2;
-    console.log("no assignments, add 2 to textcontent");
-  } else if (firstNumber && !secondNumber) {
+    console.log("no assignments, add 2 to the end of number");
+  } else if (operator !== "" && operatorClicked === true) {
     display.textContent = 2;
-    secondNumber = 2;
-    console.log("first number assigned, assign 2 as secondnumber");
-  } else if (firstNumber && secondNumber) {
+    operatorClicked = false;
+    console.log(`new operator ${operator}, display 2`);
+  } else if (operator !== "" && operatorClicked === false) {
     display.textContent += 2;
-    secondNumber = display.textContent;
-    console.log("firstnumber and secondnumber assigned, add 2 to end of secondnumber");
+    console.log("operator already in place, add 2 to the end of number");
   } else {
     display.textContent = "Error";
   }
 });
 
 numberThree.addEventListener("click", () => {
-  if (!operator && !firstNumber && !secondNumber && display.textContent == "0") {
+  if (display.textContent === "0") {
     display.textContent = 3;
     console.log("no assigments, display 3");
-  } else if (!operator && !firstNumber && !secondNumber && display.textContent != "0") {
+  } else if (operator === "" && display.textContent !== 0) {
     display.textContent += 3;
-    console.log("no assignments, add 3 to textcontent");
-  } else if (firstNumber && !secondNumber) {
+    console.log("no assignments, add 3 to the end of number");
+  } else if (operator !== "" && operatorClicked === true) {
     display.textContent = 3;
-    secondNumber = 3;
-    console.log("first number assigned, assign 3 as secondnumber");
-  } else if (firstNumber && secondNumber) {
+    operatorClicked = false;
+    console.log(`new operator ${operator}, display 3`);
+  } else if (operator !== "" && operatorClicked === false) {
     display.textContent += 3;
-    secondNumber = display.textContent;
-    console.log("firstnumber and secondnumber assigned, add 3 to end of secondnumber");
+    console.log("operator already in place, add 3 to the end of number");
   } else {
     display.textContent = "Error";
   }
 });
 
 numberFour.addEventListener("click", () => {
-  if (!operator && !firstNumber && !secondNumber && display.textContent == "0") {
+  if (display.textContent === "0") {
     display.textContent = 4;
     console.log("no assigments, display 4");
-  } else if (!operator && !firstNumber && !secondNumber && display.textContent != "0") {
+  } else if (operator === "" && display.textContent !== 0) {
     display.textContent += 4;
-    console.log("no assignments, add 4 to textcontent");
-  } else if (firstNumber && !secondNumber) {
+    console.log("no assignments, add 4 to the end of number");
+  } else if (operator !== "" && operatorClicked === true) {
     display.textContent = 4;
-    secondNumber = 4;
-    console.log("first number assigned, assign 4 as secondnumber");
-  } else if (firstNumber && secondNumber) {
+    operatorClicked = false;
+    console.log(`new operator ${operator}, display 4`);
+  } else if (operator !== "" && operatorClicked === false) {
     display.textContent += 4;
-    secondNumber = display.textContent;
-    console.log("firstnumber and secondnumber assigned, add 4 to end of secondnumber");
+    console.log("operator already in place, add 4 to the end of number");
   } else {
     display.textContent = "Error";
   }
 });
 
 numberFive.addEventListener("click", () => {
-  if (!operator && !firstNumber && !secondNumber && display.textContent == "0") {
+  if (display.textContent === "0") {
     display.textContent = 5;
     console.log("no assigments, display 5");
-  } else if (!operator && !firstNumber && !secondNumber && display.textContent != "0") {
+  } else if (operator === "" && display.textContent !== 0) {
     display.textContent += 5;
-    console.log("no assignments, add 5 to textcontent");
-  } else if (firstNumber && !secondNumber) {
+    console.log("no assignments, add 5 to the end of number");
+  } else if (operator !== "" && operatorClicked === true) {
     display.textContent = 5;
-    secondNumber = 5;
-    console.log("first number assigned, assign 5 as secondnumber");
-  } else if (firstNumber && secondNumber) {
+    operatorClicked = false;
+    console.log(`new operator ${operator}, display 5`);
+  } else if (operator !== "" && operatorClicked === false) {
     display.textContent += 5;
-    secondNumber = display.textContent;
-    console.log("firstnumber and secondnumber assigned, add 5 to end of secondnumber");
+    console.log("operator already in place, add 5 to the end of number");
   } else {
     display.textContent = "Error";
   }
 });
 
 numberSix.addEventListener("click", () => {
-  if (!operator && !firstNumber && !secondNumber && display.textContent == "0") {
+  if (display.textContent === "0") {
     display.textContent = 6;
     console.log("no assigments, display 6");
-  } else if (!operator && !firstNumber && !secondNumber && display.textContent != "0") {
+  } else if (operator === "" && display.textContent !== 0) {
     display.textContent += 6;
-    console.log("no assignments, add 6 to textcontent");
-  } else if (firstNumber && !secondNumber) {
+    console.log("no assignments, add 6 to the end of number");
+  } else if (operator !== "" && operatorClicked === true) {
     display.textContent = 6;
-    secondNumber = 6;
-    console.log("first number assigned, assign 6 as secondnumber");
-  } else if (firstNumber && secondNumber) {
+    operatorClicked = false;
+    console.log(`new operator ${operator}, display 6`);
+  } else if (operator !== "" && operatorClicked === false) {
     display.textContent += 6;
-    secondNumber = display.textContent;
-    console.log("firstnumber and secondnumber assigned, add 6 to end of secondnumber");
+    console.log("operator already in place, add 6 to the end of number");
   } else {
     display.textContent = "Error";
   }
 });
 
 numberSeven.addEventListener("click", () => {
-  if (!operator && !firstNumber && !secondNumber && display.textContent == "0") {
+  if (display.textContent === "0") {
     display.textContent = 7;
     console.log("no assigments, display 7");
-  } else if (!operator && !firstNumber && !secondNumber && display.textContent != "0") {
+  } else if (operator === "" && display.textContent !== 0) {
     display.textContent += 7;
-    console.log("no assignments, add 7 to textcontent");
-  } else if (firstNumber && !secondNumber) {
+    console.log("no assignments, add 7 to the end of number");
+  } else if (operator !== "" && operatorClicked === true) {
     display.textContent = 7;
-    secondNumber = 7;
-    console.log("first number assigned, assign 7 as secondnumber");
-  } else if (firstNumber && secondNumber) {
+    operatorClicked = false;
+    console.log(`new operator ${operator}, display 7`);
+  } else if (operator !== "" && operatorClicked === false) {
     display.textContent += 7;
-    secondNumber = display.textContent;
-    console.log("firstnumber and secondnumber assigned, add 7 to end of secondnumber");
+    console.log("operator already in place, add 7 to the end of number");
   } else {
     display.textContent = "Error";
   }
 });
 
 numberEight.addEventListener("click", () => {
-  if (!operator && !firstNumber && !secondNumber && display.textContent == "0") {
+  if (display.textContent === "0") {
     display.textContent = 8;
     console.log("no assigments, display 8");
-  } else if (!operator && !firstNumber && !secondNumber && display.textContent != "0") {
+  } else if (operator === "" && display.textContent !== 0) {
     display.textContent += 8;
-    console.log("no assignments, add 8 to textcontent");
-  } else if (firstNumber && !secondNumber) {
+    console.log("no assignments, add 8 to the end of number");
+  } else if (operator !== "" && operatorClicked === true) {
     display.textContent = 8;
-    secondNumber = 8;
-    console.log("first number assigned, assign 8 as secondnumber");
-  } else if (firstNumber && secondNumber) {
+    operatorClicked = false;
+    console.log(`new operator ${operator}, display 8`);
+  } else if (operator !== "" && operatorClicked === false) {
     display.textContent += 8;
-    secondNumber = display.textContent;
-    console.log("firstnumber and secondnumber assigned, add 8 to end of secondnumber");
+    console.log("operator already in place, add 8 to the end of number");
   } else {
     display.textContent = "Error";
   }
 });
 
 numberNine.addEventListener("click", () => {
-  if (!operator && !firstNumber && !secondNumber && display.textContent == "0") {
+  if (display.textContent === "0") {
     display.textContent = 9;
     console.log("no assigments, display 9");
-  } else if (!operator && !firstNumber && !secondNumber && display.textContent != "0") {
+  } else if (operator === "" && display.textContent !== 0) {
     display.textContent += 9;
-    console.log("no assignments, add 9 to textcontent");
-  } else if (firstNumber && !secondNumber) {
+    console.log("no assignments, add 9 to the end of number");
+  } else if (operator !== "" && operatorClicked === true) {
     display.textContent = 9;
-    secondNumber = 9;
-    console.log("first number assigned, assign 9 as secondnumber");
-  } else if (firstNumber && secondNumber) {
+    operatorClicked = false;
+    console.log(`new operator ${operator}, display 9`);
+  } else if (operator !== "" && operatorClicked === false) {
     display.textContent += 9;
-    secondNumber = display.textContent;
-    console.log("firstnumber and secondnumber assigned, add 9 to end of secondnumber");
+    console.log("operator already in place, add 9 to the end of number");
   } else {
     display.textContent = "Error";
   }
 });
 
 clearButton.addEventListener("click", () => {
-  display.textContent = "0";
-  firstNumber = "";
+  display.textContent = 0;
+  firstNumber = 0;
   secondNumber = "";
   operator = "";
+  operatorClicked = false;
 });
 
 addButton.addEventListener("click", () => {
-  if (!firstNumber && display.textContent !== "") {
+  if (!firstNumber && operator !== "add") {
     firstNumber = display.textContent;
     operator = "add";
-    console.log(`adding case 1: no firstnumber assigned, assigning ${firstNumber}, textcontent not empty`);
-  } else if (firstNumber && display.textContent !== "" && operator !== "add") {
+    operatorClicked = true;
+    console.log(`adding case 1: no firstnumber, firstnumber becomes ${firstNumber}, assigning adding operator`);
+  } else if (firstNumber && !secondNumber && operator !== "add") {
     secondNumber = display.textContent;
-    operator = "add";
-    operate(operator, firstNumber, secondNumber);
-    firstNumber = operate(operator, firstNumber, secondNumber);
-    //secondNumber = "";
-    console.log(`adding case 2: firstnumber was ${firstNumber}, assign secondnumber as ${secondNumber}, textcontent not empty, different operator`);
-    alert(secondNumber);
-  } else if (firstNumber && display.textContent !== "" && operator === "add") {
+    display.textContent = operate(operator, firstNumber, secondNumber);
     secondNumber = "";
     operator = "add";
-    console.log("case 3: firstnumber exists, textcontent not empty");
-  } else if (!operator) {
-    operator = "add";
+    operatorClicked = true;
+    console.log(`adding case 2: firstnumber exists: ${firstNumber}, perform calculation with displayed number, assign adding operator and unassign secondnumber)`);
+  } else {
     firstNumber = display.textContent;
     secondNumber = "";
-    console.log("case 4: no operator");
-  } else {
-    display.textContent = "Error";
+    operator = "add";
+    operatorClicked = true;
+    console.log(`adding case 3: firstnumber exists, changed to ${firstNumber}, assign adding operator and unassign secondnumber)`);
   }
 });
 
 subtractButton.addEventListener("click", () => {
-  if (!firstNumber && display.textContent !== "") {
+  if (!firstNumber && operator !== "subtract") {
     firstNumber = display.textContent;
     operator = "subtract";
-    console.log(`subtraction case 1: no firstnumber assigned, assigning ${firstNumber}, textcontent not empty`);
-  } else if (firstNumber && display.textContent !== "" && operator !== "subtract") {
+    operatorClicked = true;
+    console.log(`subtraction case 1: no firstnumber, firstnumber becomes ${firstNumber}, assigning subtraction operator`);
+  } else if (firstNumber && !secondNumber && operator !== "subtract") {
     secondNumber = display.textContent;
-    operate(operator, firstNumber, secondNumber);
-    firstNumber = operate(operator, firstNumber, secondNumber);
+    display.textContent = operate(operator, firstNumber, secondNumber);
     secondNumber = "";
     operator = "subtract";
-    console.log(`subtraction case 2: firstnumber was ${firstNumber}, assign secondnumber as ${secondNumber}, textcontent not empty, different operator`);
-  } else if (firstNumber && display.textContent !== "" && operator === "subtract") {
-    secondNumber = "";
-    operator = "subtract";
-    console.log("case 3: firstnumber exists, textcontent not empty");
-  } else if (!operator) {
-    operator = "subtract";
+    operatorClicked = true;
+    console.log(`subtraction case 2: firstnumber exists: ${firstNumber}, perform calculation with displayed number, assign subtraction operator and unassign secondnumber)`);
+  } else {
     firstNumber = display.textContent;
     secondNumber = "";
-    console.log("case 4: no operator");
-  } else {
-    display.textContent = "Error";
+    operator = "subtract";
+    operatorClicked = true;
+    console.log(`subtraction case 3: firstnumber exists, changed to ${firstNumber}, assign subtraction operator and unassign secondnumber)`);
   }
 });
 
 multiplyButton.addEventListener("click", () => {
-  if (!firstNumber && display.textContent !== "") {
+  if (!firstNumber && operator !== "multiply") {
     firstNumber = display.textContent;
     operator = "multiply";
-    console.log(`multiplication case 1: no firstnumber assigned, assigning ${firstNumber}, textcontent not empty`);
-  } else if (firstNumber && display.textContent !== "" && operator !== "multiply") {
-    secondNumber = firstNumber;
-    operate(operator, firstNumber, secondNumber);
-    firstNumber = operate(operator, firstNumber, secondNumber);
+    operatorClicked = true;
+    console.log(`multiplication case 1: no firstnumber, firstnumber becomes ${firstNumber}, assigning multiplication operator`);
+  } else if (firstNumber && !secondNumber && operator !== "multiply") {
+    secondNumber = display.textContent;
+    display.textContent = operate(operator, firstNumber, secondNumber);
     secondNumber = "";
     operator = "multiply";
-    console.log(`multiplication case 2: firstnumber was ${firstNumber}, assign secondnumber as ${secondNumber}, textcontent not empty, different operator`);
-  } else if (firstNumber && display.textContent !== "" && operator === "multiply") {
-    secondNumber = "";
-    operator = "multiply";
-    console.log("case 3: firstnumber exists, textcontent not empty");
-  } else if (!operator) {
-    operator = "multiply";
-    firstNumber = display.textContent;
-    secondNumber = "";
-    console.log("case 4: no operator");
+    operatorClicked = true;
+    console.log(`multiplication case 2: firstnumber exists: ${firstNumber}, perform calculation with displayed number, assign multiplication operator and unassign secondnumber)`);
   } else {
-    display.textContent = "Error";
+    firstNumber = display.textContent;
+    secondNumber = "";
+    operator = "multiply";
+    operatorClicked = true;
+    console.log(`multiplication case 3: firstnumber exists, changed to ${firstNumber}, assign multiplication operator and unassign secondnumber)`);
   }
 });
 
 divideButton.addEventListener("click", () => {
-  if (!firstNumber && display.textContent !== "") {
+  if (!firstNumber && operator !== "divide") {
     firstNumber = display.textContent;
     operator = "divide";
-    console.log(`division case 1: no firstnumber assigned, assigning ${firstNumber}, textcontent not empty`);
-  } else if (firstNumber && display.textContent !== "" && operator !== "divide") {
+    operatorClicked = true;
+    console.log(`division case 1: no firstnumber, firstnumber becomes ${firstNumber}, assigning division operator`);
+  } else if (firstNumber && !secondNumber && operator !== "divide") {
     secondNumber = display.textContent;
-    operate(operator, firstNumber, secondNumber);
-    firstNumber = operate(operator, firstNumber, secondNumber);
+    display.textContent = operate(operator, firstNumber, secondNumber);
     secondNumber = "";
     operator = "divide";
-    console.log(`division case 2: firstnumber was ${firstNumber}, assign secondnumber as ${secondNumber}, textcontent not empty, different operator`);
-  } else if (firstNumber && display.textContent !== "" && operator === "divide") {
-    secondNumber = "";
-    operator = "divide";
-    console.log("case 3: firstnumber exists, textcontent not empty");
-  } else if (!operator) {
-    operator = "divide";
+    operatorClicked = true;
+    console.log(`division case 2: firstnumber exists: ${firstNumber}, perform calculation with displayed number, assign division operator and unassign secondnumber)`);
+  } else {
     firstNumber = display.textContent;
     secondNumber = "";
-    console.log("case 4: no operator");
-  } else {
-    display.textContent = "Error";
+    operator = "divide";
+    operatorClicked = true;
+    console.log(`division case 3: firstnumber exists, changed to ${firstNumber}, assign division operator and unassign secondnumber)`);
   }
 });
 
 equalsButton.addEventListener("click", () => {
-  if (firstNumber && !secondNumber && secondNumber !== 0) {
-    secondNumber = firstNumber;
+  if (firstNumber && !secondNumber) {
+    secondNumber = display.textContent;
     operate(operator, firstNumber, secondNumber);
-  } else if (secondNumber === 0) {
+    operatorClicked = false;
+    console.log(`equals case 1, operator is ${operator}, firstnumber is ${firstNumber}, secondnumber is ${secondNumber}`);
+  } else if (display.textContent === "0") {
+    secondNumber = 0;
     operate(operator, firstNumber, secondNumber);
-  } else if (firstNumber && !secondNumber) {
-    secondNumber = firstNumber;
-    operate(operate, firstNumber, secondNumber);
-    firstNumber = display.textContent;
+    operatorClicked = false;
+    console.log(`equals case 2, operator is ${operator}, firstnumber is ${firstNumber}, secondnumber is ${secondNumber}`);
+  } else if (display.textContent === "" || display.textContent === NaN) {
+    secondNumber = display.textContent;
+    display.textContent = "Error";
+    operatorClicked = false;
+    console.log(`equals case 3, operator is ${operator}, firstnumber is ${firstNumber}, secondnumber is ${secondNumber}`);
   } else if (firstNumber && secondNumber) {
     operate(operator, firstNumber, secondNumber);
-  } else if (!firstNumber) {
-    firstNumber = 0;
-    display.textContent = 0;
+    operatorClicked = false;
+    console.log(`equals case 4, operator is ${operator}, firstnumber is ${firstNumber}, secondnumber is ${secondNumber}`);
   } else {
-    display.textContent = "Error";
+    display.textContent = "Error performing operation";
+    operatorClicked = false;
+    console.log(`equals case 5, operator is ${operator}, firstnumber is ${firstNumber}, secondnumber is ${secondNumber}`);
   }
 });
 
@@ -388,10 +371,10 @@ function operate(op, a, b) {
       result = divide(a, b);
       break;
     default:
-      result = "Error";
+      result = "Error: missing operator";
   } 
   display.textContent = result;
   firstNumber = result;
-  console.log(`firstnumber is now ${firstNumber}`);
+  console.log(`operate: firstnumber is now ${firstNumber}`);
   return result;
 };
