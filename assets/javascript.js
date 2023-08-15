@@ -310,25 +310,25 @@ equalsButton.addEventListener("click", () => {
   if (firstNumber && !secondNumber) {
     secondNumber = display.textContent;
     operate(operator, firstNumber, secondNumber);
-    operatorClicked = false;
+    operatorClicked = true;
     console.log(`equals case 1, operator is ${operator}, firstnumber is ${firstNumber}, secondnumber is ${secondNumber}`);
   } else if (display.textContent === "0") {
     secondNumber = 0;
     operate(operator, firstNumber, secondNumber);
-    operatorClicked = false;
+    operatorClicked = true;
     console.log(`equals case 2, operator is ${operator}, firstnumber is ${firstNumber}, secondnumber is ${secondNumber}`);
   } else if (display.textContent === "" || display.textContent === NaN) {
     secondNumber = display.textContent;
     display.textContent = "Error";
-    operatorClicked = false;
+    operatorClicked = true;
     console.log(`equals case 3, operator is ${operator}, firstnumber is ${firstNumber}, secondnumber is ${secondNumber}`);
   } else if (firstNumber && secondNumber) {
     operate(operator, firstNumber, secondNumber);
-    operatorClicked = false;
+    operatorClicked = true;
     console.log(`equals case 4, operator is ${operator}, firstnumber is ${firstNumber}, secondnumber is ${secondNumber}`);
   } else {
     display.textContent = "Error performing operation";
-    operatorClicked = false;
+    operatorClicked = true;
     console.log(`equals case 5, operator is ${operator}, firstnumber is ${firstNumber}, secondnumber is ${secondNumber}`);
   }
 });
