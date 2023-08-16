@@ -230,13 +230,13 @@ addButton.addEventListener("click", () => {
     secondNumber = "";
     operator = "add";
     operatorClicked = true;
-    console.log(`adding case 2: firstnumber exists: ${firstNumber}, perform calculation with displayed number, assign adding operator and unassign secondnumber)`);
+    console.log(`adding case 2: firstnumber exists: ${firstNumber}, perform calculation with displayed number, assign adding operator and unassign secondnumber`);
   } else {
     firstNumber = display.textContent;
     secondNumber = "";
     operator = "add";
     operatorClicked = true;
-    console.log(`adding case 3: firstnumber exists, changed to ${firstNumber}, assign adding operator and unassign secondnumber)`);
+    console.log(`adding case 3: firstnumber exists, changed to ${firstNumber}, assign adding operator and unassign secondnumber`);
   }
 });
 
@@ -252,13 +252,13 @@ subtractButton.addEventListener("click", () => {
     secondNumber = "";
     operator = "subtract";
     operatorClicked = true;
-    console.log(`subtraction case 2: firstnumber exists: ${firstNumber}, perform calculation with displayed number, assign subtraction operator and unassign secondnumber)`);
+    console.log(`subtraction case 2: firstnumber exists: ${firstNumber}, perform calculation with displayed number, assign subtraction operator and unassign secondnumber`);
   } else {
     firstNumber = display.textContent;
     secondNumber = "";
     operator = "subtract";
     operatorClicked = true;
-    console.log(`subtraction case 3: firstnumber exists, changed to ${firstNumber}, assign subtraction operator and unassign secondnumber)`);
+    console.log(`subtraction case 3: firstnumber exists, changed to ${firstNumber}, assign subtraction operator and unassign secondnumber`);
   }
 });
 
@@ -274,13 +274,13 @@ multiplyButton.addEventListener("click", () => {
     secondNumber = "";
     operator = "multiply";
     operatorClicked = true;
-    console.log(`multiplication case 2: firstnumber exists: ${firstNumber}, perform calculation with displayed number, assign multiplication operator and unassign secondnumber)`);
+    console.log(`multiplication case 2: firstnumber exists: ${firstNumber}, perform calculation with displayed number, assign multiplication operator and unassign secondnumber`);
   } else {
     firstNumber = display.textContent;
     secondNumber = "";
     operator = "multiply";
     operatorClicked = true;
-    console.log(`multiplication case 3: firstnumber exists, changed to ${firstNumber}, assign multiplication operator and unassign secondnumber)`);
+    console.log(`multiplication case 3: firstnumber exists, changed to ${firstNumber}, assign multiplication operator and unassign secondnumber`);
   }
 });
 
@@ -296,13 +296,13 @@ divideButton.addEventListener("click", () => {
     secondNumber = "";
     operator = "divide";
     operatorClicked = true;
-    console.log(`division case 2: firstnumber exists: ${firstNumber}, perform calculation with displayed number, assign division operator and unassign secondnumber)`);
+    console.log(`division case 2: firstnumber exists: ${firstNumber}, perform calculation with displayed number, assign division operator and unassign secondnumber`);
   } else {
     firstNumber = display.textContent;
     secondNumber = "";
     operator = "divide";
     operatorClicked = true;
-    console.log(`division case 3: firstnumber exists, changed to ${firstNumber}, assign division operator and unassign secondnumber)`);
+    console.log(`division case 3: firstnumber exists, changed to ${firstNumber}, assign division operator and unassign secondnumber`);
   }
 });
 
