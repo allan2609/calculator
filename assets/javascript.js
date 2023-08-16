@@ -14,6 +14,7 @@ const numberSix = document.querySelector("#six");
 const numberSeven = document.querySelector("#seven");
 const numberEight = document.querySelector("#eight");
 const numberNine = document.querySelector("#nine");
+const commaButton = document.querySelector("#comma");
 const clearButton = document.querySelector("#clear");
 const addButton = document.querySelector("#add");
 const subtractButton = document.querySelector("#subtract");
@@ -210,6 +211,26 @@ numberNine.addEventListener("click", () => {
   }
 });
 
+commaButton.addEventListener("click", () => {
+  if (display.textContent === "0") {
+    display.textContent = "0.";
+    operatorClicked = false;
+    console.log("no number, display 0.");
+  } else if (operatorClicked === false && display.textContent !== 0 && !display.textContent.includes(".")) {
+    display.textContent += ".";
+    console.log("number without decimal, add comma to the end");
+  } else if (operatorClicked === true && display.textContent.includes(".")) {
+    display.textContent = "0.";
+    firstNumber = "";
+    operatorClicked = false;
+    console.log("comma entry after operator clicked, display 0.");
+  } else if (operatorClicked === false && display.textContent.includes(".")) {
+    console.log("number already includes decimal, ignore comma entry");
+  } else {
+    display.textContent = "Error";
+  }
+});
+
 clearButton.addEventListener("click", () => {
   display.textContent = 0;
   firstNumber = 0;
@@ -316,13 +337,18 @@ equalsButton.addEventListener("click", () => {
     operate(operator, firstNumber, secondNumber);
     operatorClicked = true;
     console.log(`equals case 2, operator is ${operator}, firstnumber is ${firstNumber}, secondnumber is ${secondNumber}`);
-  } else if (!firstNumber || !operator) {
+  } else if (!firstNumber && !operator) {
     operatorClicked = false;
     console.log(`equals case 3, operator is ${operator}, firstnumber is ${firstNumber}, secondnumber is ${secondNumber}`);
+  } else if (!firstNumber && operator) {
+    firstNumber = display.textContent;
+    operate(operator, firstNumber, secondNumber);
+    operatorClicked = true;
+    console.log(`equals case 4, operator is ${operator}, firstnumber is ${firstNumber}, secondnumber is ${secondNumber}`);
   } else {
     display.textContent = "Error performing operation";
     operatorClicked = true;
-    console.log(`equals case 4, operator is ${operator}, firstnumber is ${firstNumber}, secondnumber is ${secondNumber}`);
+    console.log(`equals case 5, operator is ${operator}, firstnumber is ${firstNumber}, secondnumber is ${secondNumber}`);
   }
 });
 
