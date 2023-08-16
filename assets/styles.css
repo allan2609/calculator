@@ -23,3 +23,10 @@
   width: 32px;
   height: 32px;
 }
+
+.operator-button {
+  border: 1px solid black;
+  width: 32px;
+  height: 32px;
+  background-color: #ffd966;
+}
