@@ -563,8 +563,8 @@ function operate(op, a, b) {
     default:
       result = "Error: missing operator";
   } 
-  display.textContent = result;
+  display.textContent = Number(result.toFixed(10));
   firstNumber = result;
   console.log(`operate: firstnumber is now ${firstNumber}`);
-  return result;
+  return Number(result.toFixed(10));
 };
