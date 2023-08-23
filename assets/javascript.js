@@ -21,6 +21,7 @@ const subtractButton = document.querySelector("#subtract");
 const multiplyButton = document.querySelector("#multiply");
 const divideButton = document.querySelector("#divide");
 const equalsButton = document.querySelector("#equals");
+const plusMinusButton = document.querySelector("#plusminus");
 
 numberZero.addEventListener("click", () => {
   if (display.textContent === "0") {
@@ -521,6 +522,10 @@ equalsButton.addEventListener("click", () => {
   } else {
     display.textContent = "Error performing operation";
   }
+});
+
+plusMinusButton.addEventListener("click", () => {
+  display.textContent -= 2 * display.textContent;
 });
 
 function add(a, b) {
