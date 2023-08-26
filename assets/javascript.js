@@ -494,7 +494,6 @@ equalsButton.addEventListener("click", () => {
   if (display.textContent.includes("Error")) {
     return null;
   } else if (!firstNumber && !secondNumber) {
-    firstNumber = display.textContent;
     lastClicked = "equals";
     console.log("equals case 1");
   } else if (!firstNumber && secondNumber) {
