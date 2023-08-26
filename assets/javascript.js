@@ -482,7 +482,9 @@ divideButton.addEventListener("click", () => {
 });
 
 equalsButton.addEventListener("click", () => {
-  if (!firstNumber && !secondNumber) {
+  if (display.textContent.includes("Error")) {
+    return null;
+  } else if (!firstNumber && !secondNumber) {
     firstNumber = display.textContent;
     lastClicked = "equals";
     console.log("equals case 1");
@@ -520,12 +522,16 @@ equalsButton.addEventListener("click", () => {
     lastClicked = "equals";
     console.log("equals case 7");
   } else {
-    display.textContent = "Error performing operation";
+    display.textContent = "Error";
   }
 });
 
 plusMinusButton.addEventListener("click", () => {
-  display.textContent -= 2 * display.textContent;
+  if (display.textContent.includes("Error")) {
+    return null;
+  } else {
+    display.textContent -= 2 * display.textContent;
+  }
 });
 
 function add(a, b) {
@@ -544,7 +550,7 @@ function divide(a, b) {
   if (b != 0) {
     return +a / +b;
   } else if (b == 0) {
-    return "Error: divison by 0";
+    return "Error: divison by zero";
   } else {
     return "Error";
   }
@@ -552,6 +558,7 @@ function divide(a, b) {
 
 function operate(op, a, b) {
   let result;
+  let numberDisplayed;
   switch(op) {
     case "add":
       result = add(a, b);
@@ -575,9 +582,11 @@ function operate(op, a, b) {
     operator = "";
     lastClicked = "";
   } else {
-    display.textContent = Number(result.toFixed(10));
-    firstNumber = result;
+    numberDisplayed = parseFloat(result).toPrecision(12);
+    numberDisplayed = Number(numberDisplayed);
+    display.textContent = numberDisplayed;
+    firstNumber = numberDisplayed;
     console.log(`operate: firstnumber is now ${firstNumber}`);
-    return Number(result.toFixed(10));
+    return numberDisplayed;
   }
 };
