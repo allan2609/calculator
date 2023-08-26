@@ -274,7 +274,9 @@ clearButton.addEventListener("click", () => {
 });
 
 addButton.addEventListener("click", () => {
-  if (!firstNumber && !secondNumber) {
+  if (display.textContent.includes("Error")) {
+    return null;
+  } else if (!firstNumber && !secondNumber) {
     firstNumber = display.textContent;
     operator = "add";
     lastClicked = "operator";
@@ -326,7 +328,9 @@ addButton.addEventListener("click", () => {
 });
   
 subtractButton.addEventListener("click", () => {
-  if (!firstNumber && !secondNumber) {
+  if (display.textContent.includes("Error")) {
+    return null;
+  } else if (!firstNumber && !secondNumber) {
     firstNumber = display.textContent;
     operator = "subtract";
     lastClicked = "operator";
@@ -378,7 +382,9 @@ subtractButton.addEventListener("click", () => {
 });
 
 multiplyButton.addEventListener("click", () => {
-  if (!firstNumber && !secondNumber) {
+  if (display.textContent.includes("Error")) {
+    return null;
+  } else if (!firstNumber && !secondNumber) {
     firstNumber = display.textContent;
     operator = "multiply";
     lastClicked = "operator";
@@ -430,7 +436,9 @@ multiplyButton.addEventListener("click", () => {
 });
 
 divideButton.addEventListener("click", () => {
-  if (!firstNumber && !secondNumber) {
+  if (display.textContent.includes("Error")) {
+    return null;
+  } else if (!firstNumber && !secondNumber) {
     firstNumber = display.textContent;
     operator = "divide";
     lastClicked = "operator";
@@ -573,12 +581,12 @@ function operate(op, a, b) {
       result = divide(a, b);
       break;
     default:
-      result = "Error: missing operator";
+      result = "Error";
   } 
   if (typeof(result) === "string") {
     display.textContent = result;
     firstNumber = 0;
-    secondNumber = 0;
+    secondNumber = "";
     operator = "";
     lastClicked = "";
   } else {
