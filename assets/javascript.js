@@ -22,6 +22,7 @@ const multiplyButton = document.querySelector("#multiply");
 const divideButton = document.querySelector("#divide");
 const equalsButton = document.querySelector("#equals");
 const plusMinusButton = document.querySelector("#plusminus");
+const deleteButton = document.querySelector("#delete");
 
 numberZero.addEventListener("click", () => {
   if (display.textContent === "0") {
@@ -539,6 +540,23 @@ plusMinusButton.addEventListener("click", () => {
     return null;
   } else {
     display.textContent -= 2 * display.textContent;
+  }
+});
+
+deleteButton.addEventListener("click", () => {
+  if (display.textContent.includes("Error")) {
+    display.textContent = 0;
+    firstNumber = 0;
+    secondNumber = "";
+    operator = "";
+    lastClicked = "";
+  } else if (lastClicked === "equals") {
+    return null;
+  } else if (lastClicked === "number" || lastClicked === "operator") {
+    display.textContent = display.textContent.slice(0, -1);
+    if (display.textContent === "") {
+      display.textContent = 0;
+    }
   }
 });
 
