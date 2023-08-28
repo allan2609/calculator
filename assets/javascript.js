@@ -504,6 +504,60 @@ squareRootButton.addEventListener("click", () => {
   }
 });
 
+exponentiationButton.addEventListener("click", () => {
+  if (display.textContent.includes("Error")) {
+    return null;
+  } else if (!firstNumber && !secondNumber) {
+    firstNumber = display.textContent;
+    operator = "exponentiation";
+    lastClicked = "operator";
+    console.log(`exponentiation case 1: no firstnumber, firstnumber becomes ${firstNumber}`);
+  } else if (!firstNumber && secondNumber) {
+    firstNumber = display.textContent;
+    secondNumber = "";
+    lastClicked = "operator";
+    operator = "exponentiation";
+    console.log(`exponentiation case 2: firstnumber is ${firstNumber}, secondnumber becomes ${secondNumber}`);
+  } else if (firstNumber && !secondNumber && lastClicked === "number") {
+    secondNumber = display.textContent;
+    lastClicked = "operator";
+    display.textContent = operate(operator, firstNumber, secondNumber);
+    operator = "exponentiation";
+    firstNumber = display.textContent;
+    console.log(`exponentiation case 3: firstnumber is ${firstNumber}, secondnumber becomes ${secondNumber}`);
+  } else if (firstNumber && secondNumber && lastClicked === "number") {
+    secondNumber = display.textContent;
+    display.textContent = operate(operator, firstNumber, secondNumber);
+    operator = "exponentiation";
+    lastClicked = "operator";
+    firstNumber = display.textContent;
+    console.log(`exponentiation case 4: firstnumber is ${firstNumber}, secondnumber becomes ${secondNumber}`);
+  } else if (firstNumber && !secondNumber && lastClicked === "operator") {
+    firstNumber = display.textContent;
+    operator = "exponentiation";
+    lastClicked = "operator";
+    console.log(`exponentiation case 5: firstnumber is ${firstNumber}, secondnumber becomes ${secondNumber}`);
+  } else if (firstNumber && secondNumber && lastClicked === "operator") {
+    secondNumber = display.textContent;
+    operator = "exponentiation";
+    lastClicked = "operator";
+    console.log(`exponentiation case 6: firstnumber is ${firstNumber}, secondnumber becomes ${secondNumber}`);
+  } else if (firstNumber && !secondNumber && lastClicked === "equals") {
+    firstNumber = display.textContent;
+    operator = "exponentiation";
+    lastClicked = "operator";
+    console.log(`exponentiation case 7: firstnumber is ${firstNumber}, secondnumber becomes ${secondNumber}`);
+  } else if (firstNumber && secondNumber && lastClicked === "equals") {
+    firstNumber = display.textContent;
+    secondNumber = "";
+    operator = "exponentiation";
+    lastClicked = "operator";
+    console.log(`exponentiation case 8: firstnumber is ${firstNumber}, secondnumber becomes ${secondNumber}`);
+  } else {
+    display.textContent = "Error";
+  }
+});
+
 equalsButton.addEventListener("click", () => {
   if (display.textContent.includes("Error")) {
     return null;
@@ -595,6 +649,10 @@ function divide(a, b) {
   }
 };
 
+function exponentiation(a, b) {
+  return (+a) ** (+b);
+}
+
 function operate(op, a, b) {
   let result;
   let numberDisplayed;
@@ -610,6 +668,9 @@ function operate(op, a, b) {
       break;
     case "divide":
       result = divide(a, b);
+      break;
+    case "exponentiation":
+      result = exponentiation(a, b);
       break;
     default:
       result = "Error";
