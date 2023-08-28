@@ -492,6 +492,18 @@ divideButton.addEventListener("click", () => {
   }
 });
 
+squareRootButton.addEventListener("click", () => {
+  if (display.textContent.includes("Error")) {
+    return null;
+  } else if (display.textContent < 0) {
+    display.textContent = "Error";
+  } else if (display.textContent >= 0) {
+    display.textContent **= 0.5;
+  } else {
+    display.textContent = "Error";
+  }
+});
+
 equalsButton.addEventListener("click", () => {
   if (display.textContent.includes("Error")) {
     return null;
