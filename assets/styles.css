@@ -30,3 +30,7 @@
   height: 32px;
   background-color: #ffd966;
 }
+
+.operator-button.equals {
+  background-color: orange;
+}
