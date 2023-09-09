@@ -20,6 +20,7 @@ const addButton = document.querySelector("#add");
 const subtractButton = document.querySelector("#subtract");
 const multiplyButton = document.querySelector("#multiply");
 const divideButton = document.querySelector("#divide");
+const percentageButton = document.querySelector("#percent");
 const squareRootButton = document.querySelector("#squareroot");
 const exponentiationButton = document.querySelector("#exponentiation")
 const equalsButton = document.querySelector("#equals");
@@ -499,6 +500,19 @@ squareRootButton.addEventListener("click", () => {
     display.textContent = "Error";
   } else if (display.textContent >= 0) {
     display.textContent **= 0.5;
+  } else {
+    display.textContent = "Error";
+  }
+});
+
+percentageButton.addEventListener("click", () => {
+  if (display.textContent.includes("Error")) {
+    return null;
+  } else if (!firstNumber && !secondNumber) {
+    display.textContent /= 100;
+  } else if (firstNumber && !secondNumber) {
+    display.textContent = firstNumber * display.textContent / 100;
+    secondNumber = display.textContent;
   } else {
     display.textContent = "Error";
   }
