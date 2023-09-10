@@ -9,11 +9,27 @@
 
 .display {
   display: flex;
-  font-size: 24px;
+  flex-direction: column;
   border: 1px solid black;
   border-radius: 10px;
   width: 100%;
-  height: 50px;
+  height: 96px;
+  align-items: center;
+}
+
+.primary-display {
+  display: flex;
+  font-size: 28px;
+  width: 90%;
+  height: 65%;
+  justify-content: end;
+}
+
+.secondary-display {
+  display: flex;
+  font-size: 16px;
+  width: 85%;
+  height: 35%;
   justify-content: end;
   align-items: center;
 }
