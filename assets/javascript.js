@@ -321,7 +321,7 @@ addButton.addEventListener("click", () => {
     firstNumber = primaryDisplay.textContent;
     operator = "add";
     lastClicked = "operator";
-    previousCalculation.splice(0, 4, `${firstNumber}`, " + ", `${secondNumber}`);
+    previousCalculation.splice(0, 4, `${firstNumber}`, " + ");
     secondaryDisplay.textContent = previousCalculation.join(" ");
     console.log("add: case 5");
   } else if (firstNumber && secondNumber && lastClicked === "operator") {
@@ -335,7 +335,7 @@ addButton.addEventListener("click", () => {
     firstNumber = primaryDisplay.textContent;
     operator = "add";
     lastClicked = "operator";
-    previousCalculation.splice(0, 4, `${firstNumber}`, " + ", `${secondNumber}`);
+    previousCalculation.splice(0, 4, `${firstNumber}`, " + ");
     secondaryDisplay.textContent = previousCalculation.join(" ");
     console.log("add: case 7");
   } else if (firstNumber && secondNumber && lastClicked === "equals") {
@@ -391,7 +391,7 @@ subtractButton.addEventListener("click", () => {
     firstNumber = primaryDisplay.textContent;
     operator = "subtract";
     lastClicked = "operator";
-    previousCalculation.splice(0, 4, `${firstNumber}`, " - ", `${secondNumber}`);
+    previousCalculation.splice(0, 4, `${firstNumber}`, " - ");
     secondaryDisplay.textContent = previousCalculation.join(" ");
     console.log("subtract: case 5");
   } else if (firstNumber && secondNumber && lastClicked === "operator") {
@@ -405,7 +405,7 @@ subtractButton.addEventListener("click", () => {
     firstNumber = primaryDisplay.textContent;
     operator = "subtract";
     lastClicked = "operator";
-    previousCalculation.splice(0, 4, `${firstNumber}`, " - ", `${secondNumber}`);
+    previousCalculation.splice(0, 4, `${firstNumber}`, " - ");
     secondaryDisplay.textContent = previousCalculation.join(" ");
     console.log("subtract: case 7");
   } else if (firstNumber && secondNumber && lastClicked === "equals") {
@@ -461,7 +461,7 @@ multiplyButton.addEventListener("click", () => {
     firstNumber = primaryDisplay.textContent;
     operator = "multiply";
     lastClicked = "operator";
-    previousCalculation.splice(0, 4, `${firstNumber}`, " × ", `${secondNumber}`);
+    previousCalculation.splice(0, 4, `${firstNumber}`, " × ");
     secondaryDisplay.textContent = previousCalculation.join(" ");
     console.log("multiply: case 5");
   } else if (firstNumber && secondNumber && lastClicked === "operator") {
@@ -475,7 +475,7 @@ multiplyButton.addEventListener("click", () => {
     firstNumber = primaryDisplay.textContent;
     operator = "multiply";
     lastClicked = "operator";
-    previousCalculation.splice(0, 4, `${firstNumber}`, " × ", `${secondNumber}`);
+    previousCalculation.splice(0, 4, `${firstNumber}`, " × ");
     secondaryDisplay.textContent = previousCalculation.join(" ");
     console.log("multiply: case 7");
   } else if (firstNumber && secondNumber && lastClicked === "equals") {
@@ -531,7 +531,7 @@ divideButton.addEventListener("click", () => {
     firstNumber = primaryDisplay.textContent;
     operator = "divide";
     lastClicked = "operator";
-    previousCalculation.splice(0, 4, `${firstNumber}`, " ÷ ", `${secondNumber}`);
+    previousCalculation.splice(0, 4, `${firstNumber}`, " ÷ ");
     secondaryDisplay.textContent = previousCalculation.join(" ");
     console.log("divide: case 5");
   } else if (firstNumber && secondNumber && lastClicked === "operator") {
@@ -545,7 +545,7 @@ divideButton.addEventListener("click", () => {
     firstNumber = primaryDisplay.textContent;
     operator = "divide";
     lastClicked = "operator";
-    previousCalculation.splice(0, 4, `${firstNumber}`, " ÷ ", `${secondNumber}`);
+    previousCalculation.splice(0, 4, `${firstNumber}`, " ÷ ");
     secondaryDisplay.textContent = previousCalculation.join(" ");
     console.log("divide: case 7");
   } else if (firstNumber && secondNumber && lastClicked === "equals") {
