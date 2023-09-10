@@ -562,12 +562,21 @@ squareRootButton.addEventListener("click", () => {
     return null;
   } else if (primaryDisplay.textContent < 0) {
     primaryDisplay.textContent = "Error";
-  } else if (primaryDisplay.textContent >= 0) {
+  } else if (primaryDisplay.textContent >= 0 && !lastClicked === "operator") {
     previousCalculation.splice(0, 4, " √", `${primaryDisplay.textContent}`, " = ");
     secondaryDisplay.textContent = previousCalculation.join(" ");
     let result = primaryDisplay.textContent ** 0.5;
     result = parseFloat(result).toPrecision(8);
-    primaryDisplay.textContent = result;
+    primaryDisplay.textContent = Number(result);
+  } else if (primaryDisplay.textContent >= 0 && lastClicked === "operator" || lastClicked === "equals") {
+    firstNumber = primaryDisplay.textContent;
+    previousCalculation.splice(2, 2, " √", `${primaryDisplay.textContent}`);
+    secondaryDisplay.textContent = previousCalculation.join(" ");
+    let result = primaryDisplay.textContent ** 0.5;
+    result = parseFloat(result).toPrecision(8);
+    primaryDisplay.textContent = Number(result);
+    secondNumber = primaryDisplay.textContent;
+    lastClicked = "number";
   } else {
     primaryDisplay.textContent = "Error";
   }
