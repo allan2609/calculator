@@ -258,14 +258,10 @@ commaButton.addEventListener("click", () => {
   } else if (lastClicked === "number" && !primaryDisplay.textContent.includes(".")) {
     primaryDisplay.textContent += ".";
     console.log("number without decimal, add comma to the end");
-  } else if (lastClicked === "operator") {
+  } else if (lastClicked === "operator" || lastClicked === "equals") {
     primaryDisplay.textContent = "0.";
     lastClicked = "number";
     console.log("comma clicked after operator, display 0.");
-  } else if (lastClicked === "equals") {
-    primaryDisplay.textContent = "0.";
-    lastClicked = "number";
-    console.log("comma clicked after equals, display 0.");
   } else {
     primaryDisplay.textContent = "Error";
   }
