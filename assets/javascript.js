@@ -567,7 +567,11 @@ squareRootButton.addEventListener("click", () => {
   } else if (primaryDisplay.textContent < 0) {
     primaryDisplay.textContent = "Error";
   } else if (primaryDisplay.textContent >= 0) {
-    primaryDisplay.textContent **= 0.5;
+    previousCalculation.splice(0, 4, " √", `${primaryDisplay.textContent}`, " = ");
+    secondaryDisplay.textContent = previousCalculation.join(" ");
+    let result = primaryDisplay.textContent ** 0.5;
+    result = parseFloat(result).toPrecision(8);
+    primaryDisplay.textContent = result;
   } else {
     primaryDisplay.textContent = "Error";
   }
