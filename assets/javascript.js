@@ -714,17 +714,20 @@ deleteButton.addEventListener("click", () => {
   if (primaryDisplay.textContent.includes("Error")) {
     primaryDisplay.textContent = 0;
     secondaryDisplay.textContent = "";
+    previousCalculation = [];
     firstNumber = 0;
     secondNumber = "";
     operator = "";
     lastClicked = "";
-  } else if (lastClicked === "equals") {
+  } else if (lastClicked === "equals" || lastClicked === "operator") {
     return null;
-  } else if (lastClicked === "number" || lastClicked === "operator") {
+  } else if (lastClicked === "number") {
     primaryDisplay.textContent = primaryDisplay.textContent.slice(0, -1);
     if (primaryDisplay.textContent === "") {
       primaryDisplay.textContent = 0;
     }
+  } else {
+    primaryDisplay.textContent = "Error";
   }
 });
 
