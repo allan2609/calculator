@@ -675,7 +675,6 @@ squareRootButton.addEventListener("click", () => {
     let result = primaryDisplay.textContent ** 0.5;
     result = parseFloat(result).toPrecision(8);
     primaryDisplay.textContent = Number(result);
-    //secondNumber = "";
     lastClicked = "number";
     console.log("sqrt: case 3");
   } else {
@@ -909,7 +908,7 @@ deleteButton.addEventListener("click", () => {
       primaryDisplay.textContent = 0;
     }
   } else {
-    primaryDisplay.textContent = "Error";
+    return null;
   }
 });
 
