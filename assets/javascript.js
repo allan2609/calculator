@@ -902,7 +902,7 @@ deleteButton.addEventListener("click", () => {
     lastClicked = "";
   } else if (lastClicked === "equals" || lastClicked === "operator") {
     return null;
-  } else if (lastClicked === "number") {
+  } else if (lastClicked === "number" && !secondaryDisplay.textContent.includes("√")) {
     primaryDisplay.textContent = primaryDisplay.textContent.slice(0, -1);
     if (primaryDisplay.textContent === "") {
       primaryDisplay.textContent = 0;
