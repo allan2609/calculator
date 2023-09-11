@@ -2,6 +2,7 @@ let firstNumber = 0;
 let secondNumber;
 let operator = "";
 let lastClicked = "";
+let pressedNumber;
 const primaryDisplay = document.querySelector(".primary-display");
 primaryDisplay.textContent = firstNumber;
 const secondaryDisplay = document.querySelector(".secondary-display");
@@ -30,232 +31,53 @@ const plusMinusButton = document.querySelector("#plusminus");
 const deleteButton = document.querySelector("#delete");
 
 numberZero.addEventListener("click", () => {
-  if (primaryDisplay.textContent === "0") {
-    lastClicked = "number";
-  } else if (primaryDisplay.textContent.includes("Error")) {
-    primaryDisplay.textContent = 0;
-    secondaryDisplay.textContent = "";
-    previousCalculation = [];
-    firstNumber = "";
-    secondNumber = "";
-    operator = "";
-    lastClicked = "number";
-  } else if (primaryDisplay.textContent !== 0 && lastClicked === "number") {
-    primaryDisplay.textContent += 0;
-    lastClicked = "number";
-  } else if (primaryDisplay.textContent !== 0 && lastClicked !== "number") {
-    primaryDisplay.textContent = 0;
-    lastClicked = "number";
-  } else {
-    primaryDisplay.textContent = "Error";
-  }
+  pressedNumber = 0;
+  enterNumber();
 });
 
 numberOne.addEventListener("click", () => {
-  if (primaryDisplay.textContent === "0") {
-    primaryDisplay.textContent = 1;
-    lastClicked = "number";
-  } else if (primaryDisplay.textContent.includes("Error")) {
-    primaryDisplay.textContent = 1;
-    secondaryDisplay.textContent = "";
-    previousCalculation = [];
-    firstNumber = "";
-    secondNumber = "";
-    operator = "";
-    lastClicked = "number";
-  } else if (primaryDisplay.textContent !== 0 && lastClicked === "number") {
-    primaryDisplay.textContent += 1;
-    lastClicked = "number";
-  } else if (primaryDisplay.textContent !== 0 && lastClicked !== "number") {
-    primaryDisplay.textContent = 1;
-    lastClicked = "number";
-  } else {
-    primaryDisplay.textContent = "Error";
-  }
+  pressedNumber = 1;
+  enterNumber();
 });
 
 numberTwo.addEventListener("click", () => {
-  if (primaryDisplay.textContent === "0") {
-    primaryDisplay.textContent = 2;
-    lastClicked = "number";
-  } else if (primaryDisplay.textContent.includes("Error")) {
-    primaryDisplay.textContent = 2;
-    secondaryDisplay.textContent = "";
-    previousCalculation = [];
-    firstNumber = "";
-    secondNumber = "";
-    operator = "";
-    lastClicked = "number";
-  } else if (primaryDisplay.textContent !== 0 && lastClicked === "number") {
-    primaryDisplay.textContent += 2;
-    lastClicked = "number";
-  } else if (primaryDisplay.textContent !== 0 && lastClicked !== "number") {
-    primaryDisplay.textContent = 2;
-    lastClicked = "number";
-  } else {
-    primaryDisplay.textContent = "Error";
-  }
+  pressedNumber = 2;
+  enterNumber();
 });
 
 numberThree.addEventListener("click", () => {
-  if (primaryDisplay.textContent === "0") {
-    primaryDisplay.textContent = 3;
-    lastClicked = "number";
-  } else if (primaryDisplay.textContent.includes("Error")) {
-    primaryDisplay.textContent = 3;
-    secondaryDisplay.textContent = "";
-    previousCalculation = [];
-    firstNumber = "";
-    secondNumber = "";
-    operator = "";
-    lastClicked = "number";
-  } else if (primaryDisplay.textContent !== 0 && lastClicked === "number") {
-    primaryDisplay.textContent += 3;
-    lastClicked = "number";
-  } else if (primaryDisplay.textContent !== 0 && lastClicked !== "number") {
-    primaryDisplay.textContent = 3;
-    lastClicked = "number";
-  } else {
-    primaryDisplay.textContent = "Error";
-  }
+  pressedNumber = 3;
+  enterNumber();
 });
 
 numberFour.addEventListener("click", () => {
-  if (primaryDisplay.textContent === "0") {
-    primaryDisplay.textContent = 4;
-    lastClicked = "number";
-  } else if (primaryDisplay.textContent.includes("Error")) {
-    primaryDisplay.textContent = 4;
-    secondaryDisplay.textContent = "";
-    previousCalculation = [];
-    firstNumber = "";
-    secondNumber = "";
-    operator = "";
-    lastClicked = "number";
-  } else if (primaryDisplay.textContent !== 0 && lastClicked === "number") {
-    primaryDisplay.textContent += 4;
-    lastClicked = "number";
-  } else if (primaryDisplay.textContent !== 0 && lastClicked !== "number") {
-    primaryDisplay.textContent = 4;
-    lastClicked = "number";
-  } else {
-    primaryDisplay.textContent = "Error";
-  }
+  pressedNumber = 4;
+  enterNumber();
 });
 
 numberFive.addEventListener("click", () => {
-  if (primaryDisplay.textContent === "0") {
-    primaryDisplay.textContent = 5;
-    lastClicked = "number";
-  } else if (primaryDisplay.textContent.includes("Error")) {
-    primaryDisplay.textContent = 5;
-    secondaryDisplay.textContent = "";
-    previousCalculation = [];
-    firstNumber = "";
-    secondNumber = "";
-    operator = "";
-    lastClicked = "number";
-  } else if (primaryDisplay.textContent !== 0 && lastClicked === "number") {
-    primaryDisplay.textContent += 5;
-    lastClicked = "number";
-  } else if (primaryDisplay.textContent !== 0 && lastClicked !== "number") {
-    primaryDisplay.textContent = 5;
-    lastClicked = "number";
-  } else {
-    primaryDisplay.textContent = "Error";
-  }
+  pressedNumber = 5;
+  enterNumber();
 });
 
 numberSix.addEventListener("click", () => {
-  if (primaryDisplay.textContent === "0") {
-    primaryDisplay.textContent = 6;
-    lastClicked = "number";
-  } else if (primaryDisplay.textContent.includes("Error")) {
-    primaryDisplay.textContent = 6;
-    secondaryDisplay.textContent = "";
-    previousCalculation = [];
-    firstNumber = "";
-    secondNumber = "";
-    operator = "";
-    lastClicked = "number";
-  } else if (primaryDisplay.textContent !== 0 && lastClicked === "number") {
-    primaryDisplay.textContent += 6;
-    lastClicked = "number";
-  } else if (primaryDisplay.textContent !== 0 && lastClicked !== "number") {
-    primaryDisplay.textContent = 6;
-    lastClicked = "number";
-  } else {
-    primaryDisplay.textContent = "Error";
-  }
+  pressedNumber = 6;
+  enterNumber();
 });
 
 numberSeven.addEventListener("click", () => {
-  if (primaryDisplay.textContent === "0") {
-    primaryDisplay.textContent = 7;
-    lastClicked = "number";
-  } else if (primaryDisplay.textContent.includes("Error")) {
-    primaryDisplay.textContent = 7;
-    secondaryDisplay.textContent = "";
-    previousCalculation = [];
-    firstNumber = "";
-    secondNumber = "";
-    operator = "";
-    lastClicked = "number";
-  } else if (primaryDisplay.textContent !== 0 && lastClicked === "number") {
-    primaryDisplay.textContent += 7;
-    lastClicked = "number";
-  } else if (primaryDisplay.textContent !== 0 && lastClicked !== "number") {
-    primaryDisplay.textContent = 7;
-    lastClicked = "number";
-  } else {
-    primaryDisplay.textContent = "Error";
-  }
+  pressedNumber = 7;
+  enterNumber();
 });
 
 numberEight.addEventListener("click", () => {
-  if (primaryDisplay.textContent === "0") {
-    primaryDisplay.textContent = 8;
-    lastClicked = "number";
-  } else if (primaryDisplay.textContent.includes("Error")) {
-    primaryDisplay.textContent = 8;
-    secondaryDisplay.textContent = "";
-    previousCalculation = [];
-    firstNumber = "";
-    secondNumber = "";
-    operator = "";
-    lastClicked = "number";
-  } else if (primaryDisplay.textContent !== 0 && lastClicked === "number") {
-    primaryDisplay.textContent += 8;
-    lastClicked = "number";
-  } else if (primaryDisplay.textContent !== 0 && lastClicked !== "number") {
-    primaryDisplay.textContent = 8;
-    lastClicked = "number";
-  } else {
-    primaryDisplay.textContent = "Error";
-  }
+  pressedNumber = 8;
+  enterNumber();
 });
 
 numberNine.addEventListener("click", () => {
-  if (primaryDisplay.textContent === "0") {
-    primaryDisplay.textContent = 9;
-    lastClicked = "number";
-  } else if (primaryDisplay.textContent.includes("Error")) {
-    primaryDisplay.textContent = 9;
-    secondaryDisplay.textContent = "";
-    previousCalculation = [];
-    firstNumber = "";
-    secondNumber = "";
-    operator = "";
-    lastClicked = "number";
-  } else if (primaryDisplay.textContent !== 0 && lastClicked === "number") {
-    primaryDisplay.textContent += 9;
-    lastClicked = "number";
-  } else if (primaryDisplay.textContent !== 0 && lastClicked !== "number") {
-    primaryDisplay.textContent = 9;
-    lastClicked = "number";
-  } else {
-    primaryDisplay.textContent = "Error";
-  }
+  pressedNumber = 9;
+  enterNumber();
 });
 
 commaButton.addEventListener("click", () => {
@@ -275,13 +97,7 @@ commaButton.addEventListener("click", () => {
 });
 
 clearButton.addEventListener("click", () => {
-  primaryDisplay.textContent = 0;
-  secondaryDisplay.textContent = "";
-  previousCalculation = [];
-  firstNumber = 0;
-  secondNumber = "";
-  operator = "";
-  lastClicked = "";
+  clear();
 });
 
 addButton.addEventListener("click", () => {
@@ -841,13 +657,7 @@ plusMinusButton.addEventListener("click", () => {
 
 deleteButton.addEventListener("click", () => {
   if (primaryDisplay.textContent.includes("Error")) {
-    primaryDisplay.textContent = 0;
-    secondaryDisplay.textContent = "";
-    previousCalculation = [];
-    firstNumber = 0;
-    secondNumber = "";
-    operator = "";
-    lastClicked = "";
+    clear();
   } else if (lastClicked === "number" && !secondaryDisplay.textContent.includes("√")) {
     primaryDisplay.textContent = primaryDisplay.textContent.slice(0, -1);
     if (primaryDisplay.textContent === "") {
@@ -857,6 +667,41 @@ deleteButton.addEventListener("click", () => {
     return null;
   }
 });
+
+function enterNumber() {
+  if (pressedNumber == "0" && primaryDisplay.textContent === "0") {
+    lastClicked = "number";
+  } else if (pressedNumber != "0" && primaryDisplay.textContent === "0") {
+    primaryDisplay.textContent = pressedNumber;
+    lastClicked = "number";
+  } else if (primaryDisplay.textContent.includes("Error")) {
+    primaryDisplay.textContent = pressedNumber;
+    secondaryDisplay.textContent = "";
+    previousCalculation = [];
+    firstNumber = "";
+    secondNumber = "";
+    operator = "";
+    lastClicked = "number";
+  } else if (primaryDisplay.textContent !== 0 && lastClicked === "number") {
+    primaryDisplay.textContent += pressedNumber;
+    lastClicked = "number";
+  } else if (primaryDisplay.textContent !== 0 && lastClicked !== "number") {
+    primaryDisplay.textContent = pressedNumber;
+    lastClicked = "number";
+  } else {
+    primaryDisplay.textContent = "Error";
+  }
+};
+
+function clear() {
+  primaryDisplay.textContent = 0;
+  secondaryDisplay.textContent = "";
+  previousCalculation = [];
+  firstNumber = 0;
+  secondNumber = "";
+  operator = "";
+  lastClicked = "";
+}
 
 function add(a, b) {
   return +a + +b;
