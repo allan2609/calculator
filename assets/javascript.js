@@ -562,21 +562,32 @@ squareRootButton.addEventListener("click", () => {
     return null;
   } else if (primaryDisplay.textContent < 0) {
     primaryDisplay.textContent = "Error";
-  } else if (primaryDisplay.textContent >= 0 && !lastClicked === "operator") {
+  } else if (primaryDisplay.textContent >= 0 && lastClicked === "number") {
     previousCalculation.splice(0, 4, " √", `${primaryDisplay.textContent}`, " = ");
     secondaryDisplay.textContent = previousCalculation.join(" ");
     let result = primaryDisplay.textContent ** 0.5;
     result = parseFloat(result).toPrecision(8);
     primaryDisplay.textContent = Number(result);
-  } else if (primaryDisplay.textContent >= 0 && lastClicked === "operator" || lastClicked === "equals") {
+    console.log("sqrt: case 1");
+  } else if (primaryDisplay.textContent >= 0 && lastClicked === "operator") {
     firstNumber = primaryDisplay.textContent;
-    previousCalculation.splice(2, 2, " √", `${primaryDisplay.textContent}`);
+    previousCalculation.splice(0, 4, " √", `${primaryDisplay.textContent}`, " = ");
     secondaryDisplay.textContent = previousCalculation.join(" ");
     let result = primaryDisplay.textContent ** 0.5;
     result = parseFloat(result).toPrecision(8);
     primaryDisplay.textContent = Number(result);
-    secondNumber = primaryDisplay.textContent;
+    secondNumber = "";
     lastClicked = "number";
+    console.log("sqrt: case 2");
+  } else if (primaryDisplay.textContent >= 0 && lastClicked === "equals") {
+    previousCalculation.splice(0, 4, " √", `${primaryDisplay.textContent}`, " = ");
+    secondaryDisplay.textContent = previousCalculation.join(" ");
+    let result = primaryDisplay.textContent ** 0.5;
+    result = parseFloat(result).toPrecision(8);
+    primaryDisplay.textContent = Number(result);
+    //secondNumber = "";
+    lastClicked = "number";
+    console.log("sqrt: case 3");
   } else {
     primaryDisplay.textContent = "Error";
   }
@@ -658,6 +669,18 @@ equalsButton.addEventListener("click", () => {
   } else if (!firstNumber && secondNumber) {
     firstNumber = primaryDisplay.textContent;
     previousCalculation.splice(0, 1, `${firstNumber}`);
+    previousCalculation.splice(1, 1, `${operator}`);
+    if (previousCalculation.includes("add", 1)) {
+      previousCalculation.splice(1, 1, " + ");
+    } else if (previousCalculation.includes("subtract", 1)) {
+      previousCalculation.splice(1, 1, " - ");
+    } else if (previousCalculation.includes("multiply", 1)) {
+      previousCalculation.splice(1, 1, " × ");
+    } else if (previousCalculation.includes("divide", 1)) {
+      previousCalculation.splice(1, 1, " ÷ ");
+    } else {
+      return null;
+    }
     previousCalculation.splice(2, 2, `${secondNumber}`, " = ");
     secondaryDisplay.textContent = previousCalculation.join(" ");
     operate(operator, firstNumber, secondNumber);
