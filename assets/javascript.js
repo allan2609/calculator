@@ -33,6 +33,15 @@ numberZero.addEventListener("click", () => {
   if (primaryDisplay.textContent === "0") {
     lastClicked = "number";
     console.log("keep displaying 0");
+  } else if (primaryDisplay.textContent.includes("Error")) {
+    primaryDisplay.textContent = 0;
+    secondaryDisplay.textContent = "";
+    previousCalculation = [];
+    firstNumber = "";
+    secondNumber = "";
+    operator = "";
+    lastClicked = "number";
+    console.log("start new number entry after error");
   } else if (primaryDisplay.textContent !== 0 && lastClicked === "number") {
     primaryDisplay.textContent += 0;
     lastClicked = "number";
@@ -55,6 +64,15 @@ numberOne.addEventListener("click", () => {
     primaryDisplay.textContent = 1;
     lastClicked = "number";
     console.log("display was 0, now 1");
+  } else if (primaryDisplay.textContent.includes("Error")) {
+    primaryDisplay.textContent = 1;
+    secondaryDisplay.textContent = "";
+    previousCalculation = [];
+    firstNumber = "";
+    secondNumber = "";
+    operator = "";
+    lastClicked = "number";
+    console.log("start new number entry after error");
   } else if (primaryDisplay.textContent !== 0 && lastClicked === "number") {
     primaryDisplay.textContent += 1;
     lastClicked = "number";
@@ -77,6 +95,15 @@ numberTwo.addEventListener("click", () => {
     primaryDisplay.textContent = 2;
     lastClicked = "number";
     console.log("display was 0, now 2");
+  } else if (primaryDisplay.textContent.includes("Error")) {
+    primaryDisplay.textContent = 2;
+    secondaryDisplay.textContent = "";
+    previousCalculation = [];
+    firstNumber = "";
+    secondNumber = "";
+    operator = "";
+    lastClicked = "number";
+    console.log("start new number entry after error");
   } else if (primaryDisplay.textContent !== 0 && lastClicked === "number") {
     primaryDisplay.textContent += 2;
     lastClicked = "number";
@@ -99,6 +126,15 @@ numberThree.addEventListener("click", () => {
     primaryDisplay.textContent = 3;
     lastClicked = "number";
     console.log("display was 0, now 3");
+  } else if (primaryDisplay.textContent.includes("Error")) {
+    primaryDisplay.textContent = 3;
+    secondaryDisplay.textContent = "";
+    previousCalculation = [];
+    firstNumber = "";
+    secondNumber = "";
+    operator = "";
+    lastClicked = "number";
+    console.log("start new number entry after error");
   } else if (primaryDisplay.textContent !== 0 && lastClicked === "number") {
     primaryDisplay.textContent += 3;
     lastClicked = "number";
@@ -121,6 +157,15 @@ numberFour.addEventListener("click", () => {
     primaryDisplay.textContent = 4;
     lastClicked = "number";
     console.log("display was 0, now 4");
+  } else if (primaryDisplay.textContent.includes("Error")) {
+    primaryDisplay.textContent = 4;
+    secondaryDisplay.textContent = "";
+    previousCalculation = [];
+    firstNumber = "";
+    secondNumber = "";
+    operator = "";
+    lastClicked = "number";
+    console.log("start new number entry after error");
   } else if (primaryDisplay.textContent !== 0 && lastClicked === "number") {
     primaryDisplay.textContent += 4;
     lastClicked = "number";
@@ -143,6 +188,15 @@ numberFive.addEventListener("click", () => {
     primaryDisplay.textContent = 5;
     lastClicked = "number";
     console.log("display was 0, now 5");
+  } else if (primaryDisplay.textContent.includes("Error")) {
+    primaryDisplay.textContent = 5;
+    secondaryDisplay.textContent = "";
+    previousCalculation = [];
+    firstNumber = "";
+    secondNumber = "";
+    operator = "";
+    lastClicked = "number";
+    console.log("start new number entry after error");
   } else if (primaryDisplay.textContent !== 0 && lastClicked === "number") {
     primaryDisplay.textContent += 5;
     lastClicked = "number";
@@ -165,6 +219,15 @@ numberSix.addEventListener("click", () => {
     primaryDisplay.textContent = 6;
     lastClicked = "number";
     console.log("display was 0, now 6");
+  } else if (primaryDisplay.textContent.includes("Error")) {
+    primaryDisplay.textContent = 6;
+    secondaryDisplay.textContent = "";
+    previousCalculation = [];
+    firstNumber = "";
+    secondNumber = "";
+    operator = "";
+    lastClicked = "number";
+    console.log("start new number entry after error");
   } else if (primaryDisplay.textContent !== 0 && lastClicked === "number") {
     primaryDisplay.textContent += 6;
     lastClicked = "number";
@@ -187,6 +250,15 @@ numberSeven.addEventListener("click", () => {
     primaryDisplay.textContent = 7;
     lastClicked = "number";
     console.log("display was 0, now 7");
+  } else if (primaryDisplay.textContent.includes("Error")) {
+    primaryDisplay.textContent = 7;
+    secondaryDisplay.textContent = "";
+    previousCalculation = [];
+    firstNumber = "";
+    secondNumber = "";
+    operator = "";
+    lastClicked = "number";
+    console.log("start new number entry after error");
   } else if (primaryDisplay.textContent !== 0 && lastClicked === "number") {
     primaryDisplay.textContent += 7;
     lastClicked = "number";
@@ -209,6 +281,15 @@ numberEight.addEventListener("click", () => {
     primaryDisplay.textContent = 8;
     lastClicked = "number";
     console.log("display was 0, now 8");
+  } else if (primaryDisplay.textContent.includes("Error")) {
+    primaryDisplay.textContent = 8;
+    secondaryDisplay.textContent = "";
+    previousCalculation = [];
+    firstNumber = "";
+    secondNumber = "";
+    operator = "";
+    lastClicked = "number";
+    console.log("start new number entry after error");
   } else if (primaryDisplay.textContent !== 0 && lastClicked === "number") {
     primaryDisplay.textContent += 8;
     lastClicked = "number";
@@ -231,6 +312,15 @@ numberNine.addEventListener("click", () => {
     primaryDisplay.textContent = 9;
     lastClicked = "number";
     console.log("display was 0, now 9");
+  } else if (primaryDisplay.textContent.includes("Error")) {
+    primaryDisplay.textContent = 9;
+    secondaryDisplay.textContent = "";
+    previousCalculation = [];
+    firstNumber = "";
+    secondNumber = "";
+    operator = "";
+    lastClicked = "number";
+    console.log("start new number entry after error");
   } else if (primaryDisplay.textContent !== 0 && lastClicked === "number") {
     primaryDisplay.textContent += 9;
     lastClicked = "number";
