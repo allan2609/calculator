@@ -32,7 +32,6 @@ const deleteButton = document.querySelector("#delete");
 numberZero.addEventListener("click", () => {
   if (primaryDisplay.textContent === "0") {
     lastClicked = "number";
-    console.log("keep displaying 0");
   } else if (primaryDisplay.textContent.includes("Error")) {
     primaryDisplay.textContent = 0;
     secondaryDisplay.textContent = "";
@@ -41,19 +40,12 @@ numberZero.addEventListener("click", () => {
     secondNumber = "";
     operator = "";
     lastClicked = "number";
-    console.log("start new number entry after error");
   } else if (primaryDisplay.textContent !== 0 && lastClicked === "number") {
     primaryDisplay.textContent += 0;
     lastClicked = "number";
-    console.log("last click was number, add 0 to the end of number");
-  } else if (primaryDisplay.textContent !== 0 && lastClicked === "operator") {
+  } else if (primaryDisplay.textContent !== 0 && lastClicked !== "number") {
     primaryDisplay.textContent = 0;
     lastClicked = "number";
-    console.log("last click was operator, display 0");
-  } else if (primaryDisplay.textContent !== 0 && lastClicked === "equals") {
-    primaryDisplay.textContent = 0;
-    lastClicked = "number";
-    console.log("last click was equals, display 0");
   } else {
     primaryDisplay.textContent = "Error";
   }
@@ -63,7 +55,6 @@ numberOne.addEventListener("click", () => {
   if (primaryDisplay.textContent === "0") {
     primaryDisplay.textContent = 1;
     lastClicked = "number";
-    console.log("display was 0, now 1");
   } else if (primaryDisplay.textContent.includes("Error")) {
     primaryDisplay.textContent = 1;
     secondaryDisplay.textContent = "";
@@ -72,19 +63,12 @@ numberOne.addEventListener("click", () => {
     secondNumber = "";
     operator = "";
     lastClicked = "number";
-    console.log("start new number entry after error");
   } else if (primaryDisplay.textContent !== 0 && lastClicked === "number") {
     primaryDisplay.textContent += 1;
     lastClicked = "number";
-    console.log("last click was number, add 1 to the end of number");
-  } else if (primaryDisplay.textContent !== 0 && lastClicked === "operator") {
+  } else if (primaryDisplay.textContent !== 0 && lastClicked !== "number") {
     primaryDisplay.textContent = 1;
     lastClicked = "number";
-    console.log("last click was operator, display 1");
-  } else if (primaryDisplay.textContent !== 0 && lastClicked === "equals") {
-    primaryDisplay.textContent = 1;
-    lastClicked = "number";
-    console.log("last click was equals, display 1");
   } else {
     primaryDisplay.textContent = "Error";
   }
@@ -94,7 +78,6 @@ numberTwo.addEventListener("click", () => {
   if (primaryDisplay.textContent === "0") {
     primaryDisplay.textContent = 2;
     lastClicked = "number";
-    console.log("display was 0, now 2");
   } else if (primaryDisplay.textContent.includes("Error")) {
     primaryDisplay.textContent = 2;
     secondaryDisplay.textContent = "";
@@ -103,19 +86,12 @@ numberTwo.addEventListener("click", () => {
     secondNumber = "";
     operator = "";
     lastClicked = "number";
-    console.log("start new number entry after error");
   } else if (primaryDisplay.textContent !== 0 && lastClicked === "number") {
     primaryDisplay.textContent += 2;
     lastClicked = "number";
-    console.log("last click was number, add 2 to the end of number");
-  } else if (primaryDisplay.textContent !== 0 && lastClicked === "operator") {
+  } else if (primaryDisplay.textContent !== 0 && lastClicked !== "number") {
     primaryDisplay.textContent = 2;
     lastClicked = "number";
-    console.log("last click was operator, display 2");
-  } else if (primaryDisplay.textContent !== 0 && lastClicked === "equals") {
-    primaryDisplay.textContent = 2;
-    lastClicked = "number";
-    console.log("last click was equals, display 2");
   } else {
     primaryDisplay.textContent = "Error";
   }
@@ -125,7 +101,6 @@ numberThree.addEventListener("click", () => {
   if (primaryDisplay.textContent === "0") {
     primaryDisplay.textContent = 3;
     lastClicked = "number";
-    console.log("display was 0, now 3");
   } else if (primaryDisplay.textContent.includes("Error")) {
     primaryDisplay.textContent = 3;
     secondaryDisplay.textContent = "";
@@ -134,19 +109,12 @@ numberThree.addEventListener("click", () => {
     secondNumber = "";
     operator = "";
     lastClicked = "number";
-    console.log("start new number entry after error");
   } else if (primaryDisplay.textContent !== 0 && lastClicked === "number") {
     primaryDisplay.textContent += 3;
     lastClicked = "number";
-    console.log("last click was number, add 3 to the end of number");
-  } else if (primaryDisplay.textContent !== 0 && lastClicked === "operator") {
+  } else if (primaryDisplay.textContent !== 0 && lastClicked !== "number") {
     primaryDisplay.textContent = 3;
     lastClicked = "number";
-    console.log("last click was operator, display 3");
-  } else if (primaryDisplay.textContent !== 0 && lastClicked === "equals") {
-    primaryDisplay.textContent = 3;
-    lastClicked = "number";
-    console.log("last click was equals, display 3");
   } else {
     primaryDisplay.textContent = "Error";
   }
@@ -156,7 +124,6 @@ numberFour.addEventListener("click", () => {
   if (primaryDisplay.textContent === "0") {
     primaryDisplay.textContent = 4;
     lastClicked = "number";
-    console.log("display was 0, now 4");
   } else if (primaryDisplay.textContent.includes("Error")) {
     primaryDisplay.textContent = 4;
     secondaryDisplay.textContent = "";
@@ -165,19 +132,12 @@ numberFour.addEventListener("click", () => {
     secondNumber = "";
     operator = "";
     lastClicked = "number";
-    console.log("start new number entry after error");
   } else if (primaryDisplay.textContent !== 0 && lastClicked === "number") {
     primaryDisplay.textContent += 4;
     lastClicked = "number";
-    console.log("last click was number, add 4 to the end of number");
-  } else if (primaryDisplay.textContent !== 0 && lastClicked === "operator") {
+  } else if (primaryDisplay.textContent !== 0 && lastClicked !== "number") {
     primaryDisplay.textContent = 4;
     lastClicked = "number";
-    console.log("last click was operator, display 4");
-  } else if (primaryDisplay.textContent !== 0 && lastClicked === "equals") {
-    primaryDisplay.textContent = 4;
-    lastClicked = "number";
-    console.log("last click was equals, display 4");
   } else {
     primaryDisplay.textContent = "Error";
   }
@@ -187,7 +147,6 @@ numberFive.addEventListener("click", () => {
   if (primaryDisplay.textContent === "0") {
     primaryDisplay.textContent = 5;
     lastClicked = "number";
-    console.log("display was 0, now 5");
   } else if (primaryDisplay.textContent.includes("Error")) {
     primaryDisplay.textContent = 5;
     secondaryDisplay.textContent = "";
@@ -196,19 +155,12 @@ numberFive.addEventListener("click", () => {
     secondNumber = "";
     operator = "";
     lastClicked = "number";
-    console.log("start new number entry after error");
   } else if (primaryDisplay.textContent !== 0 && lastClicked === "number") {
     primaryDisplay.textContent += 5;
     lastClicked = "number";
-    console.log("last click was number, add 5 to the end of number");
-  } else if (primaryDisplay.textContent !== 0 && lastClicked === "operator") {
+  } else if (primaryDisplay.textContent !== 0 && lastClicked !== "number") {
     primaryDisplay.textContent = 5;
     lastClicked = "number";
-    console.log("last click was operator, display 5");
-  } else if (primaryDisplay.textContent !== 0 && lastClicked === "equals") {
-    primaryDisplay.textContent = 5;
-    lastClicked = "number";
-    console.log("last click was equals, display 5");
   } else {
     primaryDisplay.textContent = "Error";
   }
@@ -218,7 +170,6 @@ numberSix.addEventListener("click", () => {
   if (primaryDisplay.textContent === "0") {
     primaryDisplay.textContent = 6;
     lastClicked = "number";
-    console.log("display was 0, now 6");
   } else if (primaryDisplay.textContent.includes("Error")) {
     primaryDisplay.textContent = 6;
     secondaryDisplay.textContent = "";
@@ -227,19 +178,12 @@ numberSix.addEventListener("click", () => {
     secondNumber = "";
     operator = "";
     lastClicked = "number";
-    console.log("start new number entry after error");
   } else if (primaryDisplay.textContent !== 0 && lastClicked === "number") {
     primaryDisplay.textContent += 6;
     lastClicked = "number";
-    console.log("last click was number, add 6 to the end of number");
-  } else if (primaryDisplay.textContent !== 0 && lastClicked === "operator") {
+  } else if (primaryDisplay.textContent !== 0 && lastClicked !== "number") {
     primaryDisplay.textContent = 6;
     lastClicked = "number";
-    console.log("last click was operator, display 6");
-  } else if (primaryDisplay.textContent !== 0 && lastClicked === "equals") {
-    primaryDisplay.textContent = 6;
-    lastClicked = "number";
-    console.log("last click was equals, display 6");
   } else {
     primaryDisplay.textContent = "Error";
   }
@@ -249,7 +193,6 @@ numberSeven.addEventListener("click", () => {
   if (primaryDisplay.textContent === "0") {
     primaryDisplay.textContent = 7;
     lastClicked = "number";
-    console.log("display was 0, now 7");
   } else if (primaryDisplay.textContent.includes("Error")) {
     primaryDisplay.textContent = 7;
     secondaryDisplay.textContent = "";
@@ -258,19 +201,12 @@ numberSeven.addEventListener("click", () => {
     secondNumber = "";
     operator = "";
     lastClicked = "number";
-    console.log("start new number entry after error");
   } else if (primaryDisplay.textContent !== 0 && lastClicked === "number") {
     primaryDisplay.textContent += 7;
     lastClicked = "number";
-    console.log("last click was number, add 7 to the end of number");
-  } else if (primaryDisplay.textContent !== 0 && lastClicked === "operator") {
+  } else if (primaryDisplay.textContent !== 0 && lastClicked !== "number") {
     primaryDisplay.textContent = 7;
     lastClicked = "number";
-    console.log("last click was operator, display 7");
-  } else if (primaryDisplay.textContent !== 0 && lastClicked === "equals") {
-    primaryDisplay.textContent = 7;
-    lastClicked = "number";
-    console.log("last click was equals, display 7");
   } else {
     primaryDisplay.textContent = "Error";
   }
@@ -280,7 +216,6 @@ numberEight.addEventListener("click", () => {
   if (primaryDisplay.textContent === "0") {
     primaryDisplay.textContent = 8;
     lastClicked = "number";
-    console.log("display was 0, now 8");
   } else if (primaryDisplay.textContent.includes("Error")) {
     primaryDisplay.textContent = 8;
     secondaryDisplay.textContent = "";
@@ -289,19 +224,12 @@ numberEight.addEventListener("click", () => {
     secondNumber = "";
     operator = "";
     lastClicked = "number";
-    console.log("start new number entry after error");
   } else if (primaryDisplay.textContent !== 0 && lastClicked === "number") {
     primaryDisplay.textContent += 8;
     lastClicked = "number";
-    console.log("last click was number, add 8 to the end of number");
-  } else if (primaryDisplay.textContent !== 0 && lastClicked === "operator") {
+  } else if (primaryDisplay.textContent !== 0 && lastClicked !== "number") {
     primaryDisplay.textContent = 8;
     lastClicked = "number";
-    console.log("last click was operator, display 8");
-  } else if (primaryDisplay.textContent !== 0 && lastClicked === "equals") {
-    primaryDisplay.textContent = 8;
-    lastClicked = "number";
-    console.log("last click was equals, display 8");
   } else {
     primaryDisplay.textContent = "Error";
   }
@@ -311,7 +239,6 @@ numberNine.addEventListener("click", () => {
   if (primaryDisplay.textContent === "0") {
     primaryDisplay.textContent = 9;
     lastClicked = "number";
-    console.log("display was 0, now 9");
   } else if (primaryDisplay.textContent.includes("Error")) {
     primaryDisplay.textContent = 9;
     secondaryDisplay.textContent = "";
@@ -320,19 +247,12 @@ numberNine.addEventListener("click", () => {
     secondNumber = "";
     operator = "";
     lastClicked = "number";
-    console.log("start new number entry after error");
   } else if (primaryDisplay.textContent !== 0 && lastClicked === "number") {
     primaryDisplay.textContent += 9;
     lastClicked = "number";
-    console.log("last click was number, add 9 to the end of number");
-  } else if (primaryDisplay.textContent !== 0 && lastClicked === "operator") {
+  } else if (primaryDisplay.textContent !== 0 && lastClicked !== "number") {
     primaryDisplay.textContent = 9;
     lastClicked = "number";
-    console.log("last click was operator, display 9");
-  } else if (primaryDisplay.textContent !== 0 && lastClicked === "equals") {
-    primaryDisplay.textContent = 9;
-    lastClicked = "number";
-    console.log("last click was equals, display 9");
   } else {
     primaryDisplay.textContent = "Error";
   }
@@ -342,16 +262,13 @@ commaButton.addEventListener("click", () => {
   if (primaryDisplay.textContent === "0") {
     primaryDisplay.textContent = "0.";
     lastClicked = "number";
-    console.log("number was zero, display 0.");
   } else if (lastClicked === "number" && primaryDisplay.textContent.includes(".")) {
-    console.log("number already includes decimal, ignore comma entry");
+    return null;
   } else if (lastClicked === "number" && !primaryDisplay.textContent.includes(".")) {
     primaryDisplay.textContent += ".";
-    console.log("number without decimal, add comma to the end");
-  } else if (lastClicked === "operator" || lastClicked === "equals") {
+  } else if (lastClicked !== "number") {
     primaryDisplay.textContent = "0.";
     lastClicked = "number";
-    console.log("comma clicked after operator, display 0.");
   } else {
     primaryDisplay.textContent = "Error";
   }
@@ -385,7 +302,7 @@ addButton.addEventListener("click", () => {
     previousCalculation.splice(0, 4, `${firstNumber}`, " + ");
     secondaryDisplay.textContent = previousCalculation.join(" ");
     console.log("add: case 2");
-  } else if (firstNumber && !secondNumber && lastClicked === "number") {
+  } else if (firstNumber && !secondNumber && lastClicked === "number" || lastClicked === "exponent") {
     secondNumber = primaryDisplay.textContent;
     lastClicked = "operator";
     primaryDisplay.textContent = operate(operator, firstNumber, secondNumber);
@@ -394,7 +311,7 @@ addButton.addEventListener("click", () => {
     secondaryDisplay.textContent = previousCalculation.join(" ");
     firstNumber = primaryDisplay.textContent;
     console.log("add: case 3");
-  } else if (firstNumber && secondNumber && lastClicked === "number") {
+  } else if (firstNumber && secondNumber && lastClicked === "number" || lastClicked === "exponent") {
     secondNumber = primaryDisplay.textContent;
     primaryDisplay.textContent = operate(operator, firstNumber, secondNumber);
     operator = "add";
@@ -455,7 +372,7 @@ subtractButton.addEventListener("click", () => {
     previousCalculation.splice(0, 4, `${firstNumber}`, " - ");
     secondaryDisplay.textContent = previousCalculation.join(" ");
     console.log("subtract: case 2");
-  } else if (firstNumber && !secondNumber && lastClicked === "number") {
+  } else if (firstNumber && !secondNumber && lastClicked === "number" || lastClicked === "exponent") {
     secondNumber = primaryDisplay.textContent;
     lastClicked = "operator";
     primaryDisplay.textContent = operate(operator, firstNumber, secondNumber);
@@ -464,7 +381,7 @@ subtractButton.addEventListener("click", () => {
     secondaryDisplay.textContent = previousCalculation.join(" ");
     firstNumber = primaryDisplay.textContent;
     console.log("subtract: case 3");
-  } else if (firstNumber && secondNumber && lastClicked === "number") {
+  } else if (firstNumber && secondNumber && lastClicked === "number" || lastClicked === "exponent") {
     secondNumber = primaryDisplay.textContent;
     primaryDisplay.textContent = operate(operator, firstNumber, secondNumber);
     operator = "subtract";
@@ -525,7 +442,7 @@ multiplyButton.addEventListener("click", () => {
     previousCalculation.splice(0, 4, `${firstNumber}`, " × ");
     secondaryDisplay.textContent = previousCalculation.join(" ");
     console.log("multiply: case 2");
-  } else if (firstNumber && !secondNumber && lastClicked === "number") {
+  } else if (firstNumber && !secondNumber && lastClicked === "number" || lastClicked === "exponent") {
     secondNumber = primaryDisplay.textContent;
     lastClicked = "operator";
     primaryDisplay.textContent = operate(operator, firstNumber, secondNumber);
@@ -534,7 +451,7 @@ multiplyButton.addEventListener("click", () => {
     secondaryDisplay.textContent = previousCalculation.join(" ");
     firstNumber = primaryDisplay.textContent;
     console.log("multiply: case 3");
-  } else if (firstNumber && secondNumber && lastClicked === "number") {
+  } else if (firstNumber && secondNumber && lastClicked === "number" || lastClicked === "exponent") {
     secondNumber = primaryDisplay.textContent;
     primaryDisplay.textContent = operate(operator, firstNumber, secondNumber);
     operator = "multiply";
@@ -595,7 +512,7 @@ divideButton.addEventListener("click", () => {
     previousCalculation.splice(0, 4, `${firstNumber}`, " ÷ ");
     secondaryDisplay.textContent = previousCalculation.join(" ");
     console.log("divide: case 2");
-  } else if (firstNumber && !secondNumber && lastClicked === "number") {
+  } else if (firstNumber && !secondNumber && lastClicked === "number" || lastClicked === "exponent") {
     secondNumber = primaryDisplay.textContent;
     lastClicked = "operator";
     primaryDisplay.textContent = operate(operator, firstNumber, secondNumber);
@@ -604,7 +521,7 @@ divideButton.addEventListener("click", () => {
     secondaryDisplay.textContent = previousCalculation.join(" ");
     firstNumber = primaryDisplay.textContent;
     console.log("divide: case 3");
-  } else if (firstNumber && secondNumber && lastClicked === "number") {
+  } else if (firstNumber && secondNumber && lastClicked === "number" || lastClicked === "exponent") {
     secondNumber = primaryDisplay.textContent;
     primaryDisplay.textContent = operate(operator, firstNumber, secondNumber);
     operator = "divide";
@@ -652,12 +569,13 @@ squareRootButton.addEventListener("click", () => {
     return null;
   } else if (primaryDisplay.textContent < 0) {
     primaryDisplay.textContent = "Error";
-  } else if (primaryDisplay.textContent >= 0 && lastClicked === "number") {
+  } else if (primaryDisplay.textContent >= 0 && lastClicked === "number" || lastClicked === "exponent") {
     previousCalculation.splice(0, 4, " √", `${primaryDisplay.textContent}`, " = ");
     secondaryDisplay.textContent = previousCalculation.join(" ");
     let result = primaryDisplay.textContent ** 0.5;
     result = parseFloat(result).toPrecision(8);
     primaryDisplay.textContent = Number(result);
+    lastClicked = "exponent";
     console.log("sqrt: case 1");
   } else if (primaryDisplay.textContent >= 0 && lastClicked === "operator") {
     firstNumber = primaryDisplay.textContent;
@@ -667,7 +585,7 @@ squareRootButton.addEventListener("click", () => {
     result = parseFloat(result).toPrecision(8);
     primaryDisplay.textContent = Number(result);
     secondNumber = "";
-    lastClicked = "number";
+    lastClicked = "exponent";
     console.log("sqrt: case 2");
   } else if (primaryDisplay.textContent >= 0 && lastClicked === "equals") {
     previousCalculation.splice(0, 4, " √", `${primaryDisplay.textContent}`, " = ");
@@ -675,7 +593,7 @@ squareRootButton.addEventListener("click", () => {
     let result = primaryDisplay.textContent ** 0.5;
     result = parseFloat(result).toPrecision(8);
     primaryDisplay.textContent = Number(result);
-    lastClicked = "number";
+    lastClicked = "exponent";
     console.log("sqrt: case 3");
   } else {
     primaryDisplay.textContent = "Error";
@@ -701,32 +619,31 @@ exponentiationButton.addEventListener("click", () => {
   } else if (!firstNumber && !secondNumber) {
     firstNumber = primaryDisplay.textContent;
     operator = "exponentiation";
-    lastClicked = "operator";
+    lastClicked = "exponent";
     previousCalculation.splice(0, 4, `${firstNumber}`, " ^ ");
     secondaryDisplay.textContent = previousCalculation.join(" ");
     console.log("exp: case 1");
   } else if (!firstNumber && secondNumber) {
     firstNumber = primaryDisplay.textContent;
     secondNumber = "";
-    lastClicked = "operator";
+    lastClicked = "exponent";
     operator = "exponentiation";
     previousCalculation.splice(0, 4, `${firstNumber}`, " ^ ");
     secondaryDisplay.textContent = previousCalculation.join(" ");
     console.log("exp: case 2");
-  } else if (firstNumber && !secondNumber && lastClicked === "number") {
+  } else if (firstNumber && lastClicked === "number") {
     secondNumber = primaryDisplay.textContent;
-    lastClicked = "operator";
     primaryDisplay.textContent = operate(operator, firstNumber, secondNumber);
+    lastClicked = "exponent";
     operator = "exponentiation";
     previousCalculation.splice(0, 4, `${firstNumber}`, " ^ ");
     secondaryDisplay.textContent = previousCalculation.join(" ");
     firstNumber = primaryDisplay.textContent;
     console.log("exp: case 3");
-  } else if (firstNumber && secondNumber && lastClicked === "number") {
+  } else if (firstNumber && lastClicked === "exponent") {
     secondNumber = primaryDisplay.textContent;
-    primaryDisplay.textContent = operate(operator, firstNumber, secondNumber);
     operator = "exponentiation";
-    lastClicked = "operator";
+    lastClicked = "exponent";
     previousCalculation.splice(0, 4, `${firstNumber}`, " ^ ");
     secondaryDisplay.textContent = previousCalculation.join(" ");
     firstNumber = primaryDisplay.textContent;
@@ -734,21 +651,21 @@ exponentiationButton.addEventListener("click", () => {
   } else if (firstNumber && !secondNumber && lastClicked === "operator") {
     firstNumber = primaryDisplay.textContent;
     operator = "exponentiation";
-    lastClicked = "operator";
+    lastClicked = "exponent";
     previousCalculation.splice(0, 4, `${firstNumber}`, " ^ ");
     secondaryDisplay.textContent = previousCalculation.join(" ");
     console.log("exp: case 5");
   } else if (firstNumber && secondNumber && lastClicked === "operator") {
     secondNumber = primaryDisplay.textContent;
     operator = "exponentiation";
-    lastClicked = "operator";
+    lastClicked = "exponent";
     previousCalculation.splice(0, 4, `${firstNumber}`, " ^ ");
     secondaryDisplay.textContent = previousCalculation.join(" ");
     console.log("exp: case 6");
   } else if (firstNumber && !secondNumber && lastClicked === "equals") {
     firstNumber = primaryDisplay.textContent;
     operator = "exponentiation";
-    lastClicked = "operator";
+    lastClicked = "exponent";
     previousCalculation.splice(0, 4, `${firstNumber}`, " ^ ");
     secondaryDisplay.textContent = previousCalculation.join(" ");
     console.log("exp: case 7");
@@ -756,7 +673,7 @@ exponentiationButton.addEventListener("click", () => {
     firstNumber = primaryDisplay.textContent;
     secondNumber = "";
     operator = "exponentiation";
-    lastClicked = "operator";
+    lastClicked = "exponent";
     previousCalculation.splice(0, 4, `${firstNumber}`, " ^ ");
     secondaryDisplay.textContent = previousCalculation.join(" ");
     console.log("exp: case 8");
@@ -769,6 +686,8 @@ equalsButton.addEventListener("click", () => {
   if (primaryDisplay.textContent.includes("Error")) {
     return null;
   } else if (!firstNumber && !secondNumber) {
+    previousCalculation = [];
+    secondaryDisplay.textContent = "";
     lastClicked = "equals";
     console.log("equals case 1");
   } else if (!firstNumber && secondNumber) {
@@ -794,7 +713,7 @@ equalsButton.addEventListener("click", () => {
     firstNumber = "";
     lastClicked = "equals";
     console.log("equals case 2");
-  } else if (firstNumber && lastClicked === "number") {
+  } else if (firstNumber && lastClicked === "number" || lastClicked === "exponent") {
     secondNumber = primaryDisplay.textContent;
     previousCalculation.splice(0, 1, `${firstNumber}`);
     previousCalculation.splice(1, 1, `${operator}`);
@@ -928,8 +847,6 @@ deleteButton.addEventListener("click", () => {
     secondNumber = "";
     operator = "";
     lastClicked = "";
-  } else if (lastClicked === "equals" || lastClicked === "operator") {
-    return null;
   } else if (lastClicked === "number" && !secondaryDisplay.textContent.includes("√")) {
     primaryDisplay.textContent = primaryDisplay.textContent.slice(0, -1);
     if (primaryDisplay.textContent === "") {
@@ -999,7 +916,6 @@ function operate(op, a, b) {
     numberDisplayed = Number(numberDisplayed);
     primaryDisplay.textContent = numberDisplayed;
     firstNumber = numberDisplayed;
-    console.log(`operate: firstnumber is now ${firstNumber}`);
     return numberDisplayed;
   }
 };
