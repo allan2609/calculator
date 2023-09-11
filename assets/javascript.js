@@ -414,7 +414,7 @@ addButton.addEventListener("click", () => {
     secondNumber = primaryDisplay.textContent;
     operator = "add";
     lastClicked = "operator";
-    previousCalculation.splice(0, 4, `${firstNumber}`, " + ", `${secondNumber}`);
+    previousCalculation.splice(0, 4, `${firstNumber}`, " + ");
     secondaryDisplay.textContent = previousCalculation.join(" ");
     console.log("add: case 6");
   } else if (firstNumber && !secondNumber && lastClicked === "equals") {
@@ -484,7 +484,7 @@ subtractButton.addEventListener("click", () => {
     secondNumber = primaryDisplay.textContent;
     operator = "subtract";
     lastClicked = "operator";
-    previousCalculation.splice(0, 4, `${firstNumber}`, " - ", `${secondNumber}`);
+    previousCalculation.splice(0, 4, `${firstNumber}`, " - ");
     secondaryDisplay.textContent = previousCalculation.join(" ");
     console.log("subtract: case 6");
   } else if (firstNumber && !secondNumber && lastClicked === "equals") {
@@ -554,7 +554,7 @@ multiplyButton.addEventListener("click", () => {
     secondNumber = primaryDisplay.textContent;
     operator = "multiply";
     lastClicked = "operator";
-    previousCalculation.splice(0, 4, `${firstNumber}`, " × ", `${secondNumber}`);
+    previousCalculation.splice(0, 4, `${firstNumber}`, " × ");
     secondaryDisplay.textContent = previousCalculation.join(" ");
     console.log("multiply: case 6");
   } else if (firstNumber && !secondNumber && lastClicked === "equals") {
@@ -624,7 +624,7 @@ divideButton.addEventListener("click", () => {
     secondNumber = primaryDisplay.textContent;
     operator = "divide";
     lastClicked = "operator";
-    previousCalculation.splice(0, 4, `${firstNumber}`, " ÷ ", `${secondNumber}`);
+    previousCalculation.splice(0, 4, `${firstNumber}`, " ÷ ");
     secondaryDisplay.textContent = previousCalculation.join(" ");
     console.log("divide: case 6");
   } else if (firstNumber && !secondNumber && lastClicked === "equals") {
@@ -702,48 +702,64 @@ exponentiationButton.addEventListener("click", () => {
     firstNumber = primaryDisplay.textContent;
     operator = "exponentiation";
     lastClicked = "operator";
-    console.log(`exponentiation case 1: no firstnumber, firstnumber becomes ${firstNumber}`);
+    previousCalculation.splice(0, 4, `${firstNumber}`, " ^ ");
+    secondaryDisplay.textContent = previousCalculation.join(" ");
+    console.log("exp: case 1");
   } else if (!firstNumber && secondNumber) {
     firstNumber = primaryDisplay.textContent;
     secondNumber = "";
     lastClicked = "operator";
     operator = "exponentiation";
-    console.log(`exponentiation case 2: firstnumber is ${firstNumber}, secondnumber becomes ${secondNumber}`);
+    previousCalculation.splice(0, 4, `${firstNumber}`, " ^ ");
+    secondaryDisplay.textContent = previousCalculation.join(" ");
+    console.log("exp: case 2");
   } else if (firstNumber && !secondNumber && lastClicked === "number") {
     secondNumber = primaryDisplay.textContent;
     lastClicked = "operator";
     primaryDisplay.textContent = operate(operator, firstNumber, secondNumber);
     operator = "exponentiation";
+    previousCalculation.splice(0, 4, `${firstNumber}`, " ^ ");
+    secondaryDisplay.textContent = previousCalculation.join(" ");
     firstNumber = primaryDisplay.textContent;
-    console.log(`exponentiation case 3: firstnumber is ${firstNumber}, secondnumber becomes ${secondNumber}`);
+    console.log("exp: case 3");
   } else if (firstNumber && secondNumber && lastClicked === "number") {
     secondNumber = primaryDisplay.textContent;
     primaryDisplay.textContent = operate(operator, firstNumber, secondNumber);
     operator = "exponentiation";
     lastClicked = "operator";
+    previousCalculation.splice(0, 4, `${firstNumber}`, " ^ ");
+    secondaryDisplay.textContent = previousCalculation.join(" ");
     firstNumber = primaryDisplay.textContent;
-    console.log(`exponentiation case 4: firstnumber is ${firstNumber}, secondnumber becomes ${secondNumber}`);
+    console.log("exp: case 4");
   } else if (firstNumber && !secondNumber && lastClicked === "operator") {
     firstNumber = primaryDisplay.textContent;
     operator = "exponentiation";
     lastClicked = "operator";
-    console.log(`exponentiation case 5: firstnumber is ${firstNumber}, secondnumber becomes ${secondNumber}`);
+    previousCalculation.splice(0, 4, `${firstNumber}`, " ^ ");
+    secondaryDisplay.textContent = previousCalculation.join(" ");
+    console.log("exp: case 5");
   } else if (firstNumber && secondNumber && lastClicked === "operator") {
     secondNumber = primaryDisplay.textContent;
     operator = "exponentiation";
     lastClicked = "operator";
-    console.log(`exponentiation case 6: firstnumber is ${firstNumber}, secondnumber becomes ${secondNumber}`);
+    previousCalculation.splice(0, 4, `${firstNumber}`, " ^ ");
+    secondaryDisplay.textContent = previousCalculation.join(" ");
+    console.log("exp: case 6");
   } else if (firstNumber && !secondNumber && lastClicked === "equals") {
     firstNumber = primaryDisplay.textContent;
     operator = "exponentiation";
     lastClicked = "operator";
-    console.log(`exponentiation case 7: firstnumber is ${firstNumber}, secondnumber becomes ${secondNumber}`);
+    previousCalculation.splice(0, 4, `${firstNumber}`, " ^ ");
+    secondaryDisplay.textContent = previousCalculation.join(" ");
+    console.log("exp: case 7");
   } else if (firstNumber && secondNumber && lastClicked === "equals") {
     firstNumber = primaryDisplay.textContent;
     secondNumber = "";
     operator = "exponentiation";
     lastClicked = "operator";
-    console.log(`exponentiation case 8: firstnumber is ${firstNumber}, secondnumber becomes ${secondNumber}`);
+    previousCalculation.splice(0, 4, `${firstNumber}`, " ^ ");
+    secondaryDisplay.textContent = previousCalculation.join(" ");
+    console.log("exp: case 8");
   } else {
     primaryDisplay.textContent = "Error";
   }
@@ -767,8 +783,10 @@ equalsButton.addEventListener("click", () => {
       previousCalculation.splice(1, 1, " × ");
     } else if (previousCalculation.includes("divide", 1)) {
       previousCalculation.splice(1, 1, " ÷ ");
+    } else if (previousCalculation.includes("exponentiation", 1)) {
+      previousCalculation.splice(1, 1, " ^ ");
     } else {
-      return "Error";
+      primaryDisplay.textContent = "Error";
     }
     previousCalculation.splice(2, 2, `${secondNumber}`, " = ");
     secondaryDisplay.textContent = previousCalculation.join(" ");
@@ -788,8 +806,10 @@ equalsButton.addEventListener("click", () => {
       previousCalculation.splice(1, 1, " × ");
     } else if (previousCalculation.includes("divide", 1)) {
       previousCalculation.splice(1, 1, " ÷ ");
+    } else if (previousCalculation.includes("exponentiation", 1)) {
+      previousCalculation.splice(1, 1, " ^ ");
     } else {
-      return "Error";
+      primaryDisplay.textContent = "Error";
     }
     previousCalculation.splice(2, 2, `${secondNumber}`, " = ");
     secondaryDisplay.textContent = previousCalculation.join(" ");
@@ -809,8 +829,10 @@ equalsButton.addEventListener("click", () => {
       previousCalculation.splice(1, 1, " × ");
     } else if (previousCalculation.includes("divide", 1)) {
       previousCalculation.splice(1, 1, " ÷ ");
+    } else if (previousCalculation.includes("exponentiation", 1)) {
+      previousCalculation.splice(1, 1, " ^ ");
     } else {
-      return "Error";
+      primaryDisplay.textContent = "Error";
     }
     previousCalculation.splice(2, 2, `${secondNumber}`, " = ");
     secondaryDisplay.textContent = previousCalculation.join(" ");
@@ -830,8 +852,10 @@ equalsButton.addEventListener("click", () => {
       previousCalculation.splice(1, 1, " × ");
     } else if (previousCalculation.includes("divide", 1)) {
       previousCalculation.splice(1, 1, " ÷ ");
+    } else if (previousCalculation.includes("exponentiation", 1)) {
+      previousCalculation.splice(1, 1, " ^ ");
     } else {
-      return "Error";
+      primaryDisplay.textContent = "Error";
     }
     previousCalculation.splice(2, 2, `${secondNumber}`, " = ");
     secondaryDisplay.textContent = previousCalculation.join(" ");
@@ -850,8 +874,10 @@ equalsButton.addEventListener("click", () => {
       previousCalculation.splice(1, 1, " × ");
     } else if (previousCalculation.includes("divide", 1)) {
       previousCalculation.splice(1, 1, " ÷ ");
+    } else if (previousCalculation.includes("exponentiation", 1)) {
+      previousCalculation.splice(1, 1, " ^ ");
     } else {
-      return "Error";
+      primaryDisplay.textContent = "Error";
     }
     previousCalculation.splice(2, 2, `${secondNumber}`, " = ");
     secondaryDisplay.textContent = previousCalculation.join(" ");
@@ -870,8 +896,10 @@ equalsButton.addEventListener("click", () => {
       previousCalculation.splice(1, 1, " × ");
     } else if (previousCalculation.includes("divide", 1)) {
       previousCalculation.splice(1, 1, " ÷ ");
+    } else if (previousCalculation.includes("exponentiation", 1)) {
+      previousCalculation.splice(1, 1, " ^ ");
     } else {
-      return "Error";
+      primaryDisplay.textContent = "Error";
     }
     previousCalculation.splice(2, 2, `${secondNumber}`, " = ");
     secondaryDisplay.textContent = previousCalculation.join(" ");
