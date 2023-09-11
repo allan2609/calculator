@@ -679,7 +679,7 @@ equalsButton.addEventListener("click", () => {
     } else if (previousCalculation.includes("divide", 1)) {
       previousCalculation.splice(1, 1, " ÷ ");
     } else {
-      return null;
+      return "Error";
     }
     previousCalculation.splice(2, 2, `${secondNumber}`, " = ");
     secondaryDisplay.textContent = previousCalculation.join(" ");
@@ -690,6 +690,18 @@ equalsButton.addEventListener("click", () => {
   } else if (firstNumber && lastClicked === "number") {
     secondNumber = primaryDisplay.textContent;
     previousCalculation.splice(0, 1, `${firstNumber}`);
+    previousCalculation.splice(1, 1, `${operator}`);
+    if (previousCalculation.includes("add", 1)) {
+      previousCalculation.splice(1, 1, " + ");
+    } else if (previousCalculation.includes("subtract", 1)) {
+      previousCalculation.splice(1, 1, " - ");
+    } else if (previousCalculation.includes("multiply", 1)) {
+      previousCalculation.splice(1, 1, " × ");
+    } else if (previousCalculation.includes("divide", 1)) {
+      previousCalculation.splice(1, 1, " ÷ ");
+    } else {
+      return "Error";
+    }
     previousCalculation.splice(2, 2, `${secondNumber}`, " = ");
     secondaryDisplay.textContent = previousCalculation.join(" ");
     operate(operator, firstNumber, secondNumber);
@@ -699,6 +711,18 @@ equalsButton.addEventListener("click", () => {
   } else if (firstNumber && !secondNumber && lastClicked === "operator") {
     secondNumber = primaryDisplay.textContent;
     previousCalculation.splice(0, 1, `${firstNumber}`);
+    previousCalculation.splice(1, 1, `${operator}`);
+    if (previousCalculation.includes("add", 1)) {
+      previousCalculation.splice(1, 1, " + ");
+    } else if (previousCalculation.includes("subtract", 1)) {
+      previousCalculation.splice(1, 1, " - ");
+    } else if (previousCalculation.includes("multiply", 1)) {
+      previousCalculation.splice(1, 1, " × ");
+    } else if (previousCalculation.includes("divide", 1)) {
+      previousCalculation.splice(1, 1, " ÷ ");
+    } else {
+      return "Error";
+    }
     previousCalculation.splice(2, 2, `${secondNumber}`, " = ");
     secondaryDisplay.textContent = previousCalculation.join(" ");
     operate(operator, firstNumber, secondNumber);
@@ -708,6 +732,18 @@ equalsButton.addEventListener("click", () => {
   } else if (firstNumber && secondNumber && lastClicked === "operator") {
     secondNumber = primaryDisplay.textContent;
     previousCalculation.splice(0, 1, `${firstNumber}`);
+    previousCalculation.splice(1, 1, `${operator}`);
+    if (previousCalculation.includes("add", 1)) {
+      previousCalculation.splice(1, 1, " + ");
+    } else if (previousCalculation.includes("subtract", 1)) {
+      previousCalculation.splice(1, 1, " - ");
+    } else if (previousCalculation.includes("multiply", 1)) {
+      previousCalculation.splice(1, 1, " × ");
+    } else if (previousCalculation.includes("divide", 1)) {
+      previousCalculation.splice(1, 1, " ÷ ");
+    } else {
+      return "Error";
+    }
     previousCalculation.splice(2, 2, `${secondNumber}`, " = ");
     secondaryDisplay.textContent = previousCalculation.join(" ");
     operate(operator, firstNumber, secondNumber);
@@ -716,6 +752,18 @@ equalsButton.addEventListener("click", () => {
   } else if (firstNumber && !secondNumber && lastClicked === "equals") {
     secondNumber = primaryDisplay.textContent;
     previousCalculation.splice(0, 1, `${firstNumber}`);
+    previousCalculation.splice(1, 1, `${operator}`);
+    if (previousCalculation.includes("add", 1)) {
+      previousCalculation.splice(1, 1, " + ");
+    } else if (previousCalculation.includes("subtract", 1)) {
+      previousCalculation.splice(1, 1, " - ");
+    } else if (previousCalculation.includes("multiply", 1)) {
+      previousCalculation.splice(1, 1, " × ");
+    } else if (previousCalculation.includes("divide", 1)) {
+      previousCalculation.splice(1, 1, " ÷ ");
+    } else {
+      return "Error";
+    }
     previousCalculation.splice(2, 2, `${secondNumber}`, " = ");
     secondaryDisplay.textContent = previousCalculation.join(" ");
     operate(operator, firstNumber, secondNumber);
@@ -724,6 +772,18 @@ equalsButton.addEventListener("click", () => {
   } else if (firstNumber && secondNumber && lastClicked === "equals") {
     firstNumber = primaryDisplay.textContent;
     previousCalculation.splice(0, 1, `${firstNumber}`);
+    previousCalculation.splice(1, 1, `${operator}`);
+    if (previousCalculation.includes("add", 1)) {
+      previousCalculation.splice(1, 1, " + ");
+    } else if (previousCalculation.includes("subtract", 1)) {
+      previousCalculation.splice(1, 1, " - ");
+    } else if (previousCalculation.includes("multiply", 1)) {
+      previousCalculation.splice(1, 1, " × ");
+    } else if (previousCalculation.includes("divide", 1)) {
+      previousCalculation.splice(1, 1, " ÷ ");
+    } else {
+      return "Error";
+    }
     previousCalculation.splice(2, 2, `${secondNumber}`, " = ");
     secondaryDisplay.textContent = previousCalculation.join(" ");
     operate(operator, firstNumber, secondNumber);
