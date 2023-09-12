@@ -166,7 +166,7 @@ squareRootButton.addEventListener("click", () => {
     previousCalculation.splice(0, 4, " √", `${primaryDisplay.textContent}`, " = ");
     secondaryDisplay.textContent = previousCalculation.join(" ");
     let result = primaryDisplay.textContent ** 0.5;
-    result = parseFloat(result).toPrecision(8);
+    result = parseFloat(result).toPrecision(6);
     primaryDisplay.textContent = Number(result);
     lastClicked = "exponent";
   } else if (primaryDisplay.textContent >= 0 && lastClicked === "operator") {
@@ -174,7 +174,7 @@ squareRootButton.addEventListener("click", () => {
     previousCalculation.splice(0, 4, " √", `${primaryDisplay.textContent}`, " = ");
     secondaryDisplay.textContent = previousCalculation.join(" ");
     let result = primaryDisplay.textContent ** 0.5;
-    result = parseFloat(result).toPrecision(8);
+    result = parseFloat(result).toPrecision(6);
     primaryDisplay.textContent = Number(result);
     secondNumber = "";
     lastClicked = "exponent";
@@ -182,7 +182,7 @@ squareRootButton.addEventListener("click", () => {
     previousCalculation.splice(0, 4, " √", `${primaryDisplay.textContent}`, " = ");
     secondaryDisplay.textContent = previousCalculation.join(" ");
     let result = primaryDisplay.textContent ** 0.5;
-    result = parseFloat(result).toPrecision(8);
+    result = parseFloat(result).toPrecision(6);
     primaryDisplay.textContent = Number(result);
     lastClicked = "exponent";
   } else {
@@ -289,9 +289,13 @@ function enterNumber() {
     previousCalculation = [];
     lastClicked = "number";
   } else if (primaryDisplay.textContent !== 0 && lastClicked === "number") {
-    primaryDisplay.textContent += pressedNumber;
-    lastClicked = "number";
-    pressedNumber = "";
+    if (primaryDisplay.textContent.length < 8) {
+      primaryDisplay.textContent += pressedNumber;
+      lastClicked = "number";
+      pressedNumber = "";
+    } else {
+      return null;
+    };
   } else if (primaryDisplay.textContent !== 0 && lastClicked !== "number") {
     primaryDisplay.textContent = pressedNumber;
     lastClicked = "number";
@@ -799,7 +803,7 @@ function operate(op, a, b) {
     operator = "";
     lastClicked = "";
   } else {
-    numberDisplayed = parseFloat(result).toPrecision(8);
+    numberDisplayed = parseFloat(result).toPrecision(6);
     numberDisplayed = Number(numberDisplayed);
     primaryDisplay.textContent = numberDisplayed;
     firstNumber = numberDisplayed;
