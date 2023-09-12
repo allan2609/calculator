@@ -1,52 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  min-height: 100vh;
+  font-family: Roboto Mono, sans-serif;
+}
+
 .calculator {
   display: flex;
   flex-direction: column;
-  width: 400px;
-  height: 550px;
+  height: 99vmin;
+  aspect-ratio: 7/10;
   border-radius: 10px;
-  border: 2px solid black;
+  border: 0.25rem solid black;
 }
 
 .display {
   display: flex;
   flex-direction: column;
+  background: rgb(210, 210, 210);
+  background: rgba(210, 210, 210, 0.7);
   border: 1px solid black;
-  border-radius: 10px;
-  width: 100%;
-  height: 96px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  height: 21%;
   align-items: center;
 }
 
 .primary-display {
   display: flex;
-  font-size: 28px;
+  font-size: 2.75rem;
+  font-weight: bold;
   width: 90%;
   height: 65%;
   justify-content: end;
+  opacity: 100%;
+  align-items: center;
 }
 
 .secondary-display {
   display: flex;
-  font-size: 16px;
+  font-size: 1.3rem;
   width: 85%;
   height: 35%;
   justify-content: end;
   align-items: center;
 }
 
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  height: 79%;
+}
+
 .number-button {
+  display: flex;
+  flex: 1 1 25%;
   border: 1px solid black;
-  width: 32px;
-  height: 32px;
+  color: #fcf4e6;
+  background-color: #2b2b2b;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.number-button:hover {
+  background-color: #4f4f4f;
 }
 
 .operator-button {
+  display: flex;
+  flex: 1 1 25%;
   border: 1px solid black;
-  width: 32px;
-  height: 32px;
   background-color: #ffd966;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.operator-button:hover {
+  background-color: #fae3a0;
+}
+
+.number-button.zero {
+  border-bottom-left-radius: 6px;
+}
+
+.number-button.clear {
+  color: #fcf4e6;
+  background-color: orange;
+  flex: 1 1 50%;
 }
 
 .operator-button.equals {
+  color: #fcf4e6;
   background-color: orange;
+  flex: 1 1 50%;
+  border-bottom-right-radius: 6px;
+}
+
+.number-button.clear:hover {
+  background-color: #ff7300;
+}
+
+.operator-button.equals:hover {
+  background-color: #adcf69;
+}
+
+.bg-image {
+  background-image: url(./background.jpg);
+  filter: blur(6px);
+  -webkit-filter: blur(6px);
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: -1;
 }
