@@ -12,7 +12,7 @@ body {
 .calculator {
   display: flex;
   flex-direction: column;
-  height: 99vmin;
+  max-height: 99vh;
   aspect-ratio: 7/10;
   border-radius: 10px;
   border: 0.25rem solid black;
