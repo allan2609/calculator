@@ -16,7 +16,7 @@ body {
 .calculator {
   display: flex;
   flex-direction: column;
-  max-height: 99vh;
+  max-height: 98vh;
   aspect-ratio: 7/10;
   border-radius: 3vmin;
   border: 0.75vmin solid black;
@@ -36,9 +36,9 @@ body {
 
 .primary-display {
   display: flex;
-  font-size: 11vmin;
+  font-size: 10vmin;
   font-weight: bold;
-  width: 90%;
+  width: 93%;
   height: 65%;
   justify-content: end;
   align-items: center;
@@ -46,11 +46,10 @@ body {
 
 .secondary-display {
   display: flex;
-  font-size: 6vmin;
-  width: 85%;
+  font-size: 4.5vmin;
+  width: 90%;
   height: 35%;
   justify-content: end;
-  align-items: center;
 }
 
 .buttons {
@@ -67,19 +66,7 @@ body {
   background-color: #2b2b2b;
   justify-content: center;
   align-items: center;
-  font-size: 5vmin;
-  font-weight: bold;
-}
-
-.number-button:not(:hover) {
-  display: flex;
-  flex: 1 1 25%;
-  border: 0.25vmin solid black;
-  color: #fcf4e6;
-  background-color: #2b2b2b;
-  justify-content: center;
-  align-items: center;
-  font-size: 5vmin;
+  font-size: 4vmin;
   font-weight: bold;
 }
 
@@ -94,18 +81,7 @@ body {
   background-color: #ffd966;
   justify-content: center;
   align-items: center;
-  font-size: 5vmin;
-  font-weight: bold;
-}
-
-.operator-button:not(:hover) {
-  display: flex;
-  flex: 1 1 25%;
-  border: 0.25vmin solid black;
-  background-color: #ffd966;
-  justify-content: center;
-  align-items: center;
-  font-size: 5vmin;
+  font-size: 4vmin;
   font-weight: bold;
 }
 
@@ -117,13 +93,11 @@ body {
   border-bottom-left-radius: 2vmin;
 }
 
-.number-button.clear, .operator-button.equals {
-  color: #fcf4e6;
-  background-color: orange;
-  flex: 1 1 50%;
+.operator-button.equals {
+  border-bottom-right-radius: 2vmin;
 }
 
-.number-button.clear:not(:hover), .operator-button.equals:not(:hover) {
+.number-button.clear, .operator-button.equals {
   color: #fcf4e6;
   background-color: orange;
   flex: 1 1 50%;
