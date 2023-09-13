@@ -807,6 +807,22 @@ function operate(op, a, b) {
     numberDisplayed = Number(numberDisplayed);
     primaryDisplay.textContent = numberDisplayed;
     firstNumber = numberDisplayed;
+    checkLength();
     return numberDisplayed;
+  }
+};
+
+function checkLength() {
+  let length = primaryDisplay.textContent.length;
+  if (length <= 10) {
+    primaryDisplay.style.fontSize = 10 + "vmin";
+  } else if (length >= 11 && length <= 13) {
+    primaryDisplay.style.fontSize = 8 + "vmin";
+  } else if (length >= 14 && length <= 16) {
+    primaryDisplay.style.fontSize = 6.5 + "vmin";
+    secondaryDisplay.style.fontSize = 3.75 + "vmin";
+  } else {
+    primaryDisplay.style.fontSize = 5 + "vmin";
+    secondaryDisplay.style.fontSize = 3 + "vmin";
   }
 };
