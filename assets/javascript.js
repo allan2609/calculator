@@ -166,7 +166,7 @@ squareRootButton.addEventListener("click", () => {
     previousCalculation.splice(0, 4, " √", `${primaryDisplay.textContent}`, " = ");
     secondaryDisplay.textContent = previousCalculation.join(" ");
     let result = primaryDisplay.textContent ** 0.5;
-    result = parseFloat(result).toPrecision(6);
+    result = parseFloat(result).toPrecision(7);
     primaryDisplay.textContent = Number(result);
     lastClicked = "exponent";
   } else if (primaryDisplay.textContent >= 0 && lastClicked === "operator") {
@@ -174,7 +174,7 @@ squareRootButton.addEventListener("click", () => {
     previousCalculation.splice(0, 4, " √", `${primaryDisplay.textContent}`, " = ");
     secondaryDisplay.textContent = previousCalculation.join(" ");
     let result = primaryDisplay.textContent ** 0.5;
-    result = parseFloat(result).toPrecision(6);
+    result = parseFloat(result).toPrecision(7);
     primaryDisplay.textContent = Number(result);
     secondNumber = "";
     lastClicked = "exponent";
@@ -182,7 +182,7 @@ squareRootButton.addEventListener("click", () => {
     previousCalculation.splice(0, 4, " √", `${primaryDisplay.textContent}`, " = ");
     secondaryDisplay.textContent = previousCalculation.join(" ");
     let result = primaryDisplay.textContent ** 0.5;
-    result = parseFloat(result).toPrecision(6);
+    result = parseFloat(result).toPrecision(7);
     primaryDisplay.textContent = Number(result);
     lastClicked = "exponent";
   } else {
@@ -289,7 +289,7 @@ function enterNumber() {
     previousCalculation = [];
     lastClicked = "number";
   } else if (primaryDisplay.textContent !== 0 && lastClicked === "number") {
-    if (primaryDisplay.textContent.length < 8) {
+    if (primaryDisplay.textContent.length < 7) {
       primaryDisplay.textContent += pressedNumber;
       lastClicked = "number";
       pressedNumber = "";
@@ -803,7 +803,7 @@ function operate(op, a, b) {
     operator = "";
     lastClicked = "";
   } else {
-    numberDisplayed = parseFloat(result).toPrecision(6);
+    numberDisplayed = parseFloat(result).toPrecision(7);
     numberDisplayed = Number(numberDisplayed);
     primaryDisplay.textContent = numberDisplayed;
     firstNumber = numberDisplayed;
